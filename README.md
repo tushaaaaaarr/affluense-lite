@@ -108,7 +108,3 @@ tests/               offline tests with a fake AI
 docs/                Part A, Part C, decision log, what's broken
 cache/  outputs/     created on first run
 ```
-
-## Data rules followed
-Public sources only. No LinkedIn. No phone/email/address collected. Delete `cache/` and
-`outputs/` when the hiring process ends.
