@@ -1,0 +1,13 @@
+run_id,time,event,model,llm_calls,cached_calls,cost_usd,wall_seconds,people,cost_per_person_usd
+ecb5a295,2026-11-15T15:40:28,Restaurant Brands Asia acquired by Inspira Global (Jan 2026),gemini-3.5-flash,1,0,0.0089,8.4,0,
+d2fe9a2b,2026-11-15T15:49:18,SEDEMAC Mechatronics IPO (Mar 2026),gemini-3.5-flash,14,0,0.1443,492.6,12,0.012
+673e57a0,2026-11-15T15:55:53,SEDEMAC Mechatronics IPO (Mar 2026),gemini-3.5-flash,4,2,0.0127,44.5,10,0.0013
+66b8a1b6,2026-11-15T16:05:30,SEDEMAC Mechatronics IPO (Mar 2026),gemini-3.5-flash-lite,4,0,0.0214,19.5,18,0.0012
+c01821ba,2026-11-15T16:10:05,SEDEMAC Mechatronics IPO (Mar 2026),gemini-3.5-flash-lite,4,3,0.0024,7.1,18,0.0001
+bc324a84,2026-11-15T16:10:12,Restaurant Brands Asia acquired by Inspira Global (Jan 2026),gemini-3.5-flash-lite,1,0,0.0014,5.6,0,
+6f1d09cf,2026-11-15T16:10:25,"Astrotalk ESOP buyback (Aug 2026, $1bn valuation)",gemini-3.5-flash-lite,2,0,0.0013,11.5,0,
+ed8e766c,2026-11-15T16:11:44,Jio Platforms IPO (Oct 2026),gemini-3.5-flash-lite,1,0,0.0041,77.2,0,
+ae5224c6,2026-11-15T16:13:19,SEDEMAC Mechatronics IPO (Mar 2026),gemini-3.5-flash-lite,4,4,0.0,0.3,18,0.0
+602c1f63,2026-11-15T16:13:20,Restaurant Brands Asia acquired by Inspira Global (Jan 2026),gemini-3.5-flash-lite,1,1,0.0,0.0,0,
+5797b28c,2026-11-15T16:13:22,"Astrotalk ESOP buyback (Aug 2026, $1bn valuation)",gemini-3.5-flash-lite,2,2,0.0,0.0,0,
+d4767c9b,2026-11-15T16:13:23,Jio Platforms IPO (Oct 2026),gemini-3.5-flash-lite,1,1,0.0,0.1,0,

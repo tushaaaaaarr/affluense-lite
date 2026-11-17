@@ -1,0 +1,21 @@
+{
+  "event": "Jio Platforms IPO (Oct 2026)",
+  "event_info": {
+    "company": "Jio Platforms Limited",
+    "kind": "IPO"
+  },
+  "people": [],
+  "institutions": [],
+  "notes": [],
+  "cost": {
+    "calls": 1,
+    "cached_calls": 1,
+    "cost_usd": 0.0,
+    "seconds": 0.0
+  },
+  "per_person": [
+    0.0,
+    {}
+  ],
+  "wall_seconds": 0.1
+}

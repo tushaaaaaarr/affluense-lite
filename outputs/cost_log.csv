@@ -1,0 +1,40 @@
+run_id,time,event,stage,person,model,in_tokens,out_tokens,cost_usd,seconds,cached
+ecb5a295,2026-11-15T15:40:28,Restaurant Brands Asia acquired by Inspira Global (Jan 2026),extract,,gemini-3.5-flash,2191,621,0.008875,8.36,False
+d2fe9a2b,2026-11-15T15:41:26,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash,2625,341,0.007007,14.65,False
+d2fe9a2b,2026-11-15T15:44:00,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash,12811,2845,0.044822,67.29,False
+d2fe9a2b,2026-11-15T15:44:28,SEDEMAC Mechatronics IPO (Mar 2026),brief,Society for Innovation and Entrepreneurship,gemini-3.5-flash,248,695,0.006627,27.6,False
+d2fe9a2b,2026-11-15T15:44:55,SEDEMAC Mechatronics IPO (Mar 2026),brief,Cyrus Jamshed Guzder,gemini-3.5-flash,247,945,0.008875,27.25,False
+d2fe9a2b,2026-11-15T15:45:00,SEDEMAC Mechatronics IPO (Mar 2026),brief,Ashwini Amit Dixit,gemini-3.5-flash,250,701,0.006684,4.39,False
+d2fe9a2b,2026-11-15T15:46:32,SEDEMAC Mechatronics IPO (Mar 2026),brief,Manish Sharma,gemini-3.5-flash,247,822,0.007769,91.94,False
+d2fe9a2b,2026-11-15T15:47:02,SEDEMAC Mechatronics IPO (Mar 2026),brief,Himanshu Kantilal Sanghavi HUF,gemini-3.5-flash,249,748,0.007105,30.78,False
+d2fe9a2b,2026-11-15T15:47:22,SEDEMAC Mechatronics IPO (Mar 2026),brief,Devang Mehta,gemini-3.5-flash,242,718,0.006825,19.88,False
+d2fe9a2b,2026-11-15T15:47:37,SEDEMAC Mechatronics IPO (Mar 2026),brief,Devinjit Singh,gemini-3.5-flash,242,707,0.006726,14.74,False
+d2fe9a2b,2026-11-15T15:48:12,SEDEMAC Mechatronics IPO (Mar 2026),brief,Perumal Ramamurthy Srinivasan,gemini-3.5-flash,246,868,0.008181,35.44,False
+d2fe9a2b,2026-11-15T15:48:40,SEDEMAC Mechatronics IPO (Mar 2026),brief,Bhavya Kapoor,gemini-3.5-flash,241,996,0.009326,27.7,False
+d2fe9a2b,2026-11-15T15:48:58,SEDEMAC Mechatronics IPO (Mar 2026),brief,Atul Hiralal Shah,gemini-3.5-flash,256,907,0.008547,17.67,False
+d2fe9a2b,2026-11-15T15:49:06,SEDEMAC Mechatronics IPO (Mar 2026),brief,Bakul Hiralal Shah,gemini-3.5-flash,256,841,0.007953,8.11,False
+d2fe9a2b,2026-11-15T15:49:18,SEDEMAC Mechatronics IPO (Mar 2026),brief,Rahul Bahri,gemini-3.5-flash,241,832,0.00785,11.54,False
+673e57a0,2026-11-15T15:55:09,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash,2625,341,0.0,0.0,True
+673e57a0,2026-11-15T15:55:09,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash,12811,2845,0.0,0.0,True
+673e57a0,2026-11-15T15:55:17,SEDEMAC Mechatronics IPO (Mar 2026),brief,Manish Sharma,gemini-3.5-flash,306,669,0.00648,7.51,False
+673e57a0,2026-11-15T15:55:37,SEDEMAC Mechatronics IPO (Mar 2026),brief,Devinjit Singh,gemini-3.5-flash,301,643,0.006239,7.03,False
+66b8a1b6,2026-11-15T16:05:16,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,2625,126,0.001102,6.11,False
+66b8a1b6,2026-11-15T16:05:25,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,12811,4504,0.015103,8.17,False
+66b8a1b6,2026-11-15T16:05:28,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3.5-flash-lite,2601,836,0.00287,2.7,False
+66b8a1b6,2026-11-15T16:05:30,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3.5-flash-lite,1363,764,0.002319,2.11,False
+c01821ba,2026-11-15T16:09:58,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,2625,126,0.0,0.0,True
+c01821ba,2026-11-15T16:09:58,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,12811,4504,0.0,0.0,True
+c01821ba,2026-11-15T16:09:58,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3.5-flash-lite,2601,836,0.0,0.0,True
+c01821ba,2026-11-15T16:10:05,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3.5-flash-lite,1447,800,0.002434,6.55,False
+bc324a84,2026-11-15T16:10:12,Restaurant Brands Asia acquired by Inspira Global (Jan 2026),extract,,gemini-3.5-flash-lite,2191,285,0.00137,5.58,False
+6f1d09cf,2026-11-15T16:10:21,"Astrotalk ESOP buyback (Aug 2026, $1bn valuation)",extract,,gemini-3.5-flash-lite,2102,83,0.000838,4.79,False
+6f1d09cf,2026-11-15T16:10:25,"Astrotalk ESOP buyback (Aug 2026, $1bn valuation)",extract,,gemini-3.5-flash-lite,828,79,0.000446,0.91,False
+ed8e766c,2026-11-15T16:11:44,Jio Platforms IPO (Oct 2026),extract,,gemini-3.5-flash-lite,12908,79,0.00407,6.08,False
+ae5224c6,2026-11-15T16:13:19,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,2625,126,0.0,0.0,True
+ae5224c6,2026-11-15T16:13:19,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,12811,4504,0.0,0.0,True
+ae5224c6,2026-11-15T16:13:19,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3.5-flash-lite,2601,836,0.0,0.0,True
+ae5224c6,2026-11-15T16:13:19,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3.5-flash-lite,1447,800,0.0,0.0,True
+602c1f63,2026-11-15T16:13:20,Restaurant Brands Asia acquired by Inspira Global (Jan 2026),extract,,gemini-3.5-flash-lite,2191,285,0.0,0.0,True
+5797b28c,2026-11-15T16:13:22,"Astrotalk ESOP buyback (Aug 2026, $1bn valuation)",extract,,gemini-3.5-flash-lite,2102,83,0.0,0.0,True
+5797b28c,2026-11-15T16:13:22,"Astrotalk ESOP buyback (Aug 2026, $1bn valuation)",extract,,gemini-3.5-flash-lite,828,79,0.0,0.0,True
+d4767c9b,2026-11-15T16:13:23,Jio Platforms IPO (Oct 2026),extract,,gemini-3.5-flash-lite,12908,79,0.0,0.0,True

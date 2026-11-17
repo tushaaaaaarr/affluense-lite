@@ -1,0 +1,1190 @@
+{
+  "event": "SEDEMAC Mechatronics IPO (Mar 2026)",
+  "event_info": {
+    "price_low": 1287.0,
+    "price_high": 1352.0,
+    "price_quote": "Price Band\n₹1,287 to ₹1,352 per share",
+    "price_url": "https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets",
+    "date": "4 to 6 Mar, 2026",
+    "date_quote": "IPO Date\n4 to 6 Mar, 2026",
+    "date_url": "https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets",
+    "company": "SEDEMAC Mechatronics",
+    "kind": "IPO"
+  },
+  "people": [
+    {
+      "name": "Cyrus Jamshed Guzder",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 132,000 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Cyrus Jamshed Guzder Up to ₹[●] million Up to 132,000 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 132000,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "Cyrus Jamshed Guzder Up to ₹[●] million Up to 132,000 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 84942000.0,
+        "high": 178464000.0,
+        "kind": "estimate",
+        "working": "132,000 shares x ₹1,287-₹1,352 = ₹8.5 cr to ₹17.8 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.6317,
+      "brief": "Cyrus Jamshed Guzder sold 132,000 shares in the SEDEMAC Mechatronics IPO ending March 6, 2026.\nGross proceeds range from ₹8.5 cr to ₹17.8 cr before tax and fees.\nCash is likely already received.\nConfidence score is 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Ashwini Amit Dixit",
+      "role": "Promoter Group Selling Shareholder",
+      "link": "sold_in_offer",
+      "shares_text": "Up to 67,500 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Ashwini Amit Dixit  Promoter Group Selling \nShareholder \nUp to 67,500 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million",
+      "shares": 67500,
+      "amount_inr": null,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 1,
+          "quote": "Ashwini Amit Dixit  Promoter Group Selling \nShareholder \nUp to 67,500 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 43436250.0,
+        "high": 91260000.0,
+        "kind": "estimate",
+        "working": "67,500 shares x ₹1,287-₹1,352 = ₹4.3 cr to ₹9.1 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.6,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "role stated"
+      ],
+      "earlier_events": [],
+      "score": 0.6256,
+      "brief": "Ashwini Amit Dixit, serving as Promoter Group Selling Shareholder, sold 67,500 shares in the SEDEMAC Mechatronics IPO.\nGross proceeds are between ₹4.3 cr and ₹9.1 cr before tax and fees, following the March 6, 2026 event.\nCash is likely already received.\nConfidence score is 0.6.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Manish Sharma",
+      "role": "Promoter Selling Shareholder",
+      "link": "sold_in_offer",
+      "shares_text": "Up to 45,000 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Manish Sharma \n[●] \nPromoter Selling \nShareholder \nUp to 45,000 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million",
+      "shares": 45000,
+      "amount_inr": null,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 1,
+          "quote": "Manish Sharma \n[●] \nPromoter Selling \nShareholder \nUp to 45,000 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 28957500.0,
+        "high": 60840000.0,
+        "kind": "estimate",
+        "working": "45,000 shares x ₹1,287-₹1,352 = ₹2.9 cr to ₹6.1 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.6,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "role stated"
+      ],
+      "earlier_events": [],
+      "score": 0.6039,
+      "brief": "Manish Sharma, acting as Promoter Selling Shareholder, sold 45,000 shares in the SEDEMAC Mechatronics IPO.\nGross proceeds range from ₹2.9 cr to ₹6.1 cr before tax and fees from the March 2026 event.\nCash is likely already received.\nConfidence score is 0.6.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Devang Mehta",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 16,650 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Devang Mehta Up to ₹[●] million Up to 16,650 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 16650,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "Devang Mehta Up to ₹[●] million Up to 16,650 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 10714275.0,
+        "high": 22510800.0,
+        "kind": "estimate",
+        "working": "16,650 shares x ₹1,287-₹1,352 = ₹1.1 cr to ₹2.3 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.5214,
+      "brief": "Devang Mehta sold 16,650 shares in the SEDEMAC Mechatronics IPO concluding on March 6, 2026.\nGross proceeds are estimated between ₹1.1 cr and ₹2.3 cr before tax and fees.\nCash is likely already received.\nConfidence score is 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Atul Hiralal Shah",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 12,600 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Atul Hiralal Shah Up to ₹[●] million Up to 12,600 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 12600,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "Atul Hiralal Shah Up to ₹[●] million Up to 12,600 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 8108100.0,
+        "high": 17035200.0,
+        "kind": "estimate",
+        "working": "12,600 shares x ₹1,287-₹1,352 = ₹0.8 cr to ₹1.7 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.507,
+      "brief": "Atul Hiralal Shah sold 12,600 shares during the SEDEMAC Mechatronics IPO in March 2026.\nGross proceeds range from ₹0.8 cr to ₹1.7 cr before tax and fees.\nCash is likely already received.\nConfidence score is 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Bakul Hiralal Shah",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 12,600 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Bakul Hiralal Shah Up to ₹[●] million Up to 12,600 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 12600,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "Bakul Hiralal Shah Up to ₹[●] million Up to 12,600 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 8108100.0,
+        "high": 17035200.0,
+        "kind": "estimate",
+        "working": "12,600 shares x ₹1,287-₹1,352 = ₹0.8 cr to ₹1.7 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.507,
+      "brief": "Bakul Hiralal Shah sold 12,600 shares in the SEDEMAC Mechatronics IPO ending March 6, 2026.\nGross proceeds range from ₹0.8 cr to ₹1.7 cr before tax and fees.\nCash is likely already received.\nConfidence score is 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Devinjit Singh",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 6,750 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Devinjit Singh Up to ₹[●] million Up to 6,750 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 6750,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "Devinjit Singh Up to ₹[●] million Up to 6,750 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 4343625.0,
+        "high": 9126000.0,
+        "kind": "estimate",
+        "working": "6,750 shares x ₹1,287-₹1,352 = ₹0.4 cr to ₹0.9 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.4757,
+      "brief": "Devinjit Singh sold 6,750 shares in the SEDEMAC Mechatronics IPO concluding March 6, 2026.\nGross proceeds range from ₹0.4 cr to ₹0.9 cr before tax and fees.\nCash is likely already received.\nConfidence score is 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Perumal Ramamurthy Srinivasan",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 6,750 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Perumal Ramamurthy \nSrinivasan \nUp to ₹[●] million Up to 6,750 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 6750,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "Perumal Ramamurthy \nSrinivasan \nUp to ₹[●] million Up to 6,750 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 4343625.0,
+        "high": 9126000.0,
+        "kind": "estimate",
+        "working": "6,750 shares x ₹1,287-₹1,352 = ₹0.4 cr to ₹0.9 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.4757,
+      "brief": "Perumal Ramamurthy Srinivasan sold 6,750 shares in the SEDEMAC Mechatronics IPO event dated March 6, 2026.\nGross proceeds range from ₹0.4 cr to ₹0.9 cr before tax and fees.\nCash is likely already received.\nConfidence score is 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Bhavya Kapoor",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 4,500 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Bhavya Kapoor Up to ₹[●] million Up to 4,500 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 4500,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "Bhavya Kapoor Up to ₹[●] million Up to 4,500 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 2895750.0,
+        "high": 6084000.0,
+        "kind": "estimate",
+        "working": "4,500 shares x ₹1,287-₹1,352 = ₹0.3 cr to ₹0.6 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.4563,
+      "brief": "Bhavya Kapoor sold 4,500 shares in the SEDEMAC Mechatronics IPO ending March 6, 2026.\nGross proceeds are between ₹0.3 cr and ₹0.6 cr before tax and fees.\nCash is likely already received.\nConfidence score is 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Rahul Bahri",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 1,800 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Rahul Bahri  Up to ₹[●] million Up to 1,800 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 1800,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "Rahul Bahri  Up to ₹[●] million Up to 1,800 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 1158300.0,
+        "high": 2433600.0,
+        "kind": "estimate",
+        "working": "1,800 shares x ₹1,287-₹1,352 = ₹0.1 cr to ₹0.2 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.417,
+      "brief": "Rahul Bahri sold 1,800 shares in the SEDEMAC Mechatronics IPO event dated March 6, 2026.\nGross proceeds range from ₹0.1 cr to ₹0.2 cr before tax and fees.\nCash is likely already received.\nConfidence score is 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Arvind Munde",
+      "role": null,
+      "link": "esop",
+      "shares_text": "30, 000 Equity Shares of face value of ₹10",
+      "amount_text": null,
+      "quote": "43,500 13,500 Equity Shares of face value of ₹10  were \nallotted to Ravit Anand and 30, 000 Equity Shares \nof face value of ₹10 were allotted to Arvind Munde",
+      "shares": 30000,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 111,
+          "quote": "43,500 13,500 Equity Shares of face value of ₹10  were \nallotted to Ravit Anand and 30, 000 Equity Shares \nof face value of ₹10 were allotted to Arvind Munde"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 38610000.0,
+        "high": 40560000.0,
+        "kind": "estimate",
+        "working": "30,000 shares x ₹1,287-₹1,352 = ₹3.9 cr to ₹4.1 cr (value of ESOP shares held, at the offer price; not cash unless they sell) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "unknown",
+        "text": "ESOP payouts follow their own vesting/exercise rules"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.4123,
+      "brief": "Arvind Munde holds ESOP shares in the SEDEMAC Mechatronics IPO in March 2026. The holding is 30,000 shares valued at ₹3.9 cr to ₹4.1 cr at offer price, which is not cash unless sold. Payouts follow their own vesting and exercise rules. Confidence: 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Tushar Rajawadha",
+      "role": null,
+      "link": "esop",
+      "shares_text": "22,500 Equity Shares of face value of ₹10",
+      "amount_text": null,
+      "quote": "37,500 7,500 Equity Shares of face value of ₹10  were \nallotted to Suresh Walunj, 7,500 Equity Shares of \nface value of ₹10  were allotted to Pratap Dandekar \nand 22,500 Equity Shares of face value of ₹10 were \nallotted to Tushar Rajawadha",
+      "shares": 22500,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 111,
+          "quote": "37,500 7,500 Equity Shares of face value of ₹10  were \nallotted to Suresh Walunj, 7,500 Equity Shares of \nface value of ₹10  were allotted to Pratap Dandekar \nand 22,500 Equity Shares of face value of ₹10 were \nallotted to Tushar Rajawadha"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 28957500.0,
+        "high": 30420000.0,
+        "kind": "estimate",
+        "working": "22,500 shares x ₹1,287-₹1,352 = ₹2.9 cr to ₹3.0 cr (value of ESOP shares held, at the offer price; not cash unless they sell) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "unknown",
+        "text": "ESOP payouts follow their own vesting/exercise rules"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.3972,
+      "brief": "Tushar Rajawadha holds ESOP shares in the SEDEMAC Mechatronics IPO in March 2026. The holding is 22,500 shares valued at ₹2.9 cr to ₹3.0 cr at offer price, which is not cash unless sold. Payouts follow their own vesting and exercise rules. Confidence: 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Neel Shah",
+      "role": null,
+      "link": "esop",
+      "shares_text": "18,000 Equity Shares of face value of ₹10",
+      "amount_text": null,
+      "quote": "18,000 18,000 Equity Shares of face value of ₹10  were \nallotted to Neel Shah",
+      "shares": 18000,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 111,
+          "quote": "18,000 18,000 Equity Shares of face value of ₹10  were \nallotted to Neel Shah"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 23166000.0,
+        "high": 24336000.0,
+        "kind": "estimate",
+        "working": "18,000 shares x ₹1,287-₹1,352 = ₹2.3 cr to ₹2.4 cr (value of ESOP shares held, at the offer price; not cash unless they sell) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "unknown",
+        "text": "ESOP payouts follow their own vesting/exercise rules"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.3855,
+      "brief": "Neel Shah holds ESOP shares in the SEDEMAC Mechatronics IPO in March 2026. The holding is 18,000 shares valued at ₹2.3 cr to ₹2.4 cr at offer price, which is not cash unless sold. Payouts follow their own vesting and exercise rules. Confidence: 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Ravit Anand",
+      "role": null,
+      "link": "esop",
+      "shares_text": "13,500 Equity Shares of face value of ₹10",
+      "amount_text": null,
+      "quote": "43,500 13,500 Equity Shares of face value of ₹10  were \nallotted to Ravit Anand and 30, 000 Equity Shares \nof face value of ₹10 were allotted to Arvind Munde",
+      "shares": 13500,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 111,
+          "quote": "43,500 13,500 Equity Shares of face value of ₹10  were \nallotted to Ravit Anand and 30, 000 Equity Shares \nof face value of ₹10 were allotted to Arvind Munde"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 17374500.0,
+        "high": 18252000.0,
+        "kind": "estimate",
+        "working": "13,500 shares x ₹1,287-₹1,352 = ₹1.7 cr to ₹1.8 cr (value of ESOP shares held, at the offer price; not cash unless they sell) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "unknown",
+        "text": "ESOP payouts follow their own vesting/exercise rules"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.3706,
+      "brief": "Ravit Anand holds ESOP shares in the SEDEMAC Mechatronics IPO in March 2026. The holding is 13,500 shares valued at ₹1.7 cr to ₹1.8 cr at offer price, which is not cash unless sold. Payouts follow their own vesting and exercise rules. Confidence: 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Indrajeet Mohite",
+      "role": null,
+      "link": "esop",
+      "shares_text": "12,000 Equity Shares of face value of ₹10",
+      "amount_text": null,
+      "quote": "16,500 12,000 Equity Shares of face value of ₹10  were \nallotted to Indrajeet Mohite and 4,500 Equity Shares \nof face value of ₹10  were allotted to Utkarsh \nChauhan",
+      "shares": 12000,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 111,
+          "quote": "16,500 12,000 Equity Shares of face value of ₹10  were \nallotted to Indrajeet Mohite and 4,500 Equity Shares \nof face value of ₹10  were allotted to Utkarsh \nChauhan"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 15444000.0,
+        "high": 16224000.0,
+        "kind": "estimate",
+        "working": "12,000 shares x ₹1,287-₹1,352 = ₹1.5 cr to ₹1.6 cr (value of ESOP shares held, at the offer price; not cash unless they sell) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "unknown",
+        "text": "ESOP payouts follow their own vesting/exercise rules"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.3645,
+      "brief": "Indrajeet Mohite holds ESOP shares in the SEDEMAC Mechatronics IPO in March 2026. The holding is 12,000 shares valued at ₹1.5 cr to ₹1.6 cr at offer price, which is not cash unless sold. Payouts follow their own vesting and exercise rules. Confidence: 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Pratap Dandekar",
+      "role": null,
+      "link": "esop",
+      "shares_text": "7,500 Equity Shares of face value of ₹10",
+      "amount_text": null,
+      "quote": "37,500 7,500 Equity Shares of face value of ₹10  were \nallotted to Suresh Walunj, 7,500 Equity Shares of \nface value of ₹10  were allotted to Pratap Dandekar \nand 22,500 Equity Shares of face value of ₹10 were \nallotted to Tushar Rajawadha",
+      "shares": 7500,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 111,
+          "quote": "37,500 7,500 Equity Shares of face value of ₹10  were \nallotted to Suresh Walunj, 7,500 Equity Shares of \nface value of ₹10  were allotted to Pratap Dandekar \nand 22,500 Equity Shares of face value of ₹10 were \nallotted to Tushar Rajawadha"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 9652500.0,
+        "high": 10140000.0,
+        "kind": "estimate",
+        "working": "7,500 shares x ₹1,287-₹1,352 = ₹1.0 cr to ₹1.0 cr (value of ESOP shares held, at the offer price; not cash unless they sell) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "unknown",
+        "text": "ESOP payouts follow their own vesting/exercise rules"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.3409,
+      "brief": "Pratap Dandekar holds ESOP shares in the SEDEMAC Mechatronics IPO in March 2026. The holding is 7,500 shares valued at ₹1.0 cr to ₹1.0 cr at offer price, which is not cash unless sold. Payouts follow their own vesting and exercise rules. Confidence: 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Utkarsh Chauhan",
+      "role": null,
+      "link": "esop",
+      "shares_text": "4,500 Equity Shares of face value of ₹10",
+      "amount_text": null,
+      "quote": "16,500 12,000 Equity Shares of face value of ₹10  were \nallotted to Indrajeet Mohite and 4,500 Equity Shares \nof face value of ₹10  were allotted to Utkarsh \nChauhan",
+      "shares": 4500,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 111,
+          "quote": "16,500 12,000 Equity Shares of face value of ₹10  were \nallotted to Indrajeet Mohite and 4,500 Equity Shares \nof face value of ₹10  were allotted to Utkarsh \nChauhan"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 5791500.0,
+        "high": 6084000.0,
+        "kind": "estimate",
+        "working": "4,500 shares x ₹1,287-₹1,352 = ₹0.6 cr to ₹0.6 cr (value of ESOP shares held, at the offer price; not cash unless they sell) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "unknown",
+        "text": "ESOP payouts follow their own vesting/exercise rules"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.3163,
+      "brief": "Utkarsh Chauhan holds ESOP shares in the SEDEMAC Mechatronics IPO in March 2026. The holding is 4,500 shares valued at ₹0.6 cr to ₹0.6 cr at offer price, which is not cash unless sold. Payouts follow their own vesting and exercise rules. Confidence: 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Suresh Walunj",
+      "role": null,
+      "link": "esop",
+      "shares_text": "1,500 Equity Shares of face value of ₹10",
+      "amount_text": null,
+      "quote": "1,500 1,500 Equity Shares of face value of ₹10  were \nallotted to Suresh Walunj",
+      "shares": 1500,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 111,
+          "quote": "1,500 1,500 Equity Shares of face value of ₹10  were \nallotted to Suresh Walunj"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 1930500.0,
+        "high": 2028000.0,
+        "kind": "estimate",
+        "working": "1,500 shares x ₹1,287-₹1,352 = ₹0.2 cr to ₹0.2 cr (value of ESOP shares held, at the offer price; not cash unless they sell) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "unknown",
+        "text": "ESOP payouts follow their own vesting/exercise rules"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "earlier_events": [],
+      "score": 0.2701,
+      "brief": "Suresh Walunj holds ESOP shares in the SEDEMAC Mechatronics IPO in March 2026. The holding is 1,500 shares valued at ₹0.2 cr to ₹0.2 cr at offer price, which is not cash unless sold. Payouts follow their own vesting and exercise rules. Confidence: 0.5.",
+      "brief_by": "llm"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "A91 Emerging Fund II LLP",
+      "role": "Investor Selling Shareholder",
+      "link": "sold_in_offer",
+      "shares_text": "Up to 2,410,650 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "A91 Emerging Fund II LLP Investor Selling \nShareholder \nUp to 2,410,650 Equity Shares of face value of \n₹10 each aggregating up to ₹ [●] million",
+      "shares": 2410650,
+      "amount_inr": null,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 1,
+          "quote": "A91 Emerging Fund II LLP Investor Selling \nShareholder \nUp to 2,410,650 Equity Shares of face value of \n₹10 each aggregating up to ₹ [●] million"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 1551253275.0,
+        "high": 3259198800.0,
+        "kind": "estimate",
+        "working": "2,410,650 shares x ₹1,287-₹1,352 = ₹155.1 cr to ₹325.9 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "role stated",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.7592
+    },
+    {
+      "name": "NRJN Family Trust",
+      "role": "Investor Selling Shareholder",
+      "link": "sold_in_offer",
+      "shares_text": "Up to 1,050,000 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "NRJN Family Trust  (represented by \nEntrust Family Office Legal & \nTrusteeship Services Private Limited)  \nInvestor Selling \nShareholder \nUp to 1,050,000 Equity Shares of face value of \n₹10 each aggregating up to ₹ [●] million",
+      "shares": 1050000,
+      "amount_inr": null,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 1,
+          "quote": "NRJN Family Trust  (represented by \nEntrust Family Office Legal & \nTrusteeship Services Private Limited)  \nInvestor Selling \nShareholder \nUp to 1,050,000 Equity Shares of face value of \n₹10 each aggregating up to ₹ [●] million"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 675675000.0,
+        "high": 1419600000.0,
+        "kind": "estimate",
+        "working": "1,050,000 shares x ₹1,287-₹1,352 = ₹67.6 cr to ₹142.0 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "role stated",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.7141
+    },
+    {
+      "name": "Xponentia Opportunities Fund II",
+      "role": "Investor Selling Shareholder",
+      "link": "sold_in_offer",
+      "shares_text": "Up to 1,043,550 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Xponentia Opportunities Fund II Investor Selling \nShareholder \nUp to 1,043,550 Equity Shares of face value of \n₹10 each aggregating up to ₹ [●] million",
+      "shares": 1043550,
+      "amount_inr": null,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 1,
+          "quote": "Xponentia Opportunities Fund II Investor Selling \nShareholder \nUp to 1,043,550 Equity Shares of face value of \n₹10 each aggregating up to ₹ [●] million"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [
+        "Xponentia Opportunities Limited"
+      ],
+      "is_org": true,
+      "amount": {
+        "low": 671524425.0,
+        "high": 1410879600.0,
+        "kind": "estimate",
+        "working": "1,043,550 shares x ₹1,287-₹1,352 = ₹67.2 cr to ₹141.1 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "role stated",
+        "could be confused with: Xponentia Opportunities Limited",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.7137
+    },
+    {
+      "name": "Mace Private Limited",
+      "role": "Investor Selling Shareholder",
+      "link": "sold_in_offer",
+      "shares_text": "Up to 765,900 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Mace Private Limited Investor Selling \nShareholder \nUp to 765,900 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million",
+      "shares": 765900,
+      "amount_inr": null,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 1,
+          "quote": "Mace Private Limited Investor Selling \nShareholder \nUp to 765,900 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 492856650.0,
+        "high": 1035496800.0,
+        "kind": "estimate",
+        "working": "765,900 shares x ₹1,287-₹1,352 = ₹49.3 cr to ₹103.5 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "role stated",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.6969
+    },
+    {
+      "name": "360 One Special Opportunities Fund – Series 8",
+      "role": "Investor Selling Shareholder",
+      "link": "sold_in_offer",
+      "shares_text": "Up to 680,850 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "360 One Special Opportunities Fund – \nSeries 8  \nInvestor Selling \nShareholder \nUp to 680,850 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million",
+      "shares": 680850,
+      "amount_inr": null,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 1,
+          "quote": "360 One Special Opportunities Fund – \nSeries 8  \nInvestor Selling \nShareholder \nUp to 680,850 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 438126975.0,
+        "high": 920509200.0,
+        "kind": "estimate",
+        "working": "680,850 shares x ₹1,287-₹1,352 = ₹43.8 cr to ₹92.1 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "role stated",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.6906
+    },
+    {
+      "name": "360 One Monopolistic Market Intermediaries Fund",
+      "role": "Investor Selling Shareholder",
+      "link": "sold_in_offer",
+      "shares_text": "Up to 472,500 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "360 One Monopolistic Market \nIntermediaries Fund  \nInvestor Selling \nShareholder \nUp to 472,500 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million",
+      "shares": 472500,
+      "amount_inr": null,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 1,
+          "quote": "360 One Monopolistic Market \nIntermediaries Fund  \nInvestor Selling \nShareholder \nUp to 472,500 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 304053750.0,
+        "high": 638820000.0,
+        "kind": "estimate",
+        "working": "472,500 shares x ₹1,287-₹1,352 = ₹30.4 cr to ₹63.9 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "role stated",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.6708
+    },
+    {
+      "name": "HDFC Life Insurance Company Limited",
+      "role": "Investor Selling Shareholder",
+      "link": "sold_in_offer",
+      "shares_text": "Up to 425,700 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "HDFC Life Insurance Company Limited Investor Selling \nShareholder \nUp to 425,700 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million",
+      "shares": 425700,
+      "amount_inr": null,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 1,
+          "quote": "HDFC Life Insurance Company Limited Investor Selling \nShareholder \nUp to 425,700 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 273937950.0,
+        "high": 575546400.0,
+        "kind": "estimate",
+        "working": "425,700 shares x ₹1,287-₹1,352 = ₹27.4 cr to ₹57.6 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "role stated",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.6651
+    },
+    {
+      "name": "Xponentia Opportunities Limited",
+      "role": "Investor Selling Shareholder",
+      "link": "sold_in_offer",
+      "shares_text": "Up to 425,250 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Xponentia Opportunities Limited  Investor Selling \nShareholder \nUp to 425,250 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million",
+      "shares": 425250,
+      "amount_inr": null,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 1,
+          "quote": "Xponentia Opportunities Limited  Investor Selling \nShareholder \nUp to 425,250 Equity Shares of face value of ₹10 \neach aggregating up to ₹ [●] million"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [
+        "Xponentia Opportunities Fund II"
+      ],
+      "is_org": true,
+      "amount": {
+        "low": 273648375.0,
+        "high": 574938000.0,
+        "kind": "estimate",
+        "working": "425,250 shares x ₹1,287-₹1,352 = ₹27.4 cr to ₹57.5 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "role stated",
+        "could be confused with: Xponentia Opportunities Fund II",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.665
+    },
+    {
+      "name": "Society for Innovation and Entrepreneurship",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 204,000 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Society for Innovation and \nEntrepreneurship \nUp to ₹[●] million Up to 204,000 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 204000,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "Society for Innovation and \nEntrepreneurship \nUp to ₹[●] million Up to 204,000 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 131274000.0,
+        "high": 275808000.0,
+        "kind": "estimate",
+        "working": "204,000 shares x ₹1,287-₹1,352 = ₹13.1 cr to ₹27.6 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.6253
+    },
+    {
+      "name": "SVS Trust No IV",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 85,050 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "SVS Trust No IV  Up to ₹[●] million Up to 85,050 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 85050,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "SVS Trust No IV  Up to ₹[●] million Up to 85,050 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 54729675.0,
+        "high": 114987600.0,
+        "kind": "estimate",
+        "working": "85,050 shares x ₹1,287-₹1,352 = ₹5.5 cr to ₹11.5 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.5781
+    },
+    {
+      "name": "Venktesh Investment and Trading Company Private Limited",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 63,450 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Venktesh Investment and \nTrading Company Private \nLimited  \nUp to ₹[●] million Up to 63,450 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 63450,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "Venktesh Investment and \nTrading Company Private \nLimited  \nUp to ₹[●] million Up to 63,450 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 40830075.0,
+        "high": 85784400.0,
+        "kind": "estimate",
+        "working": "63,450 shares x ₹1,287-₹1,352 = ₹4.1 cr to ₹8.6 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.5623
+    },
+    {
+      "name": "Himanshu Kantilal Sanghavi HUF",
+      "role": null,
+      "link": "sold_in_offer",
+      "shares_text": "Up to 25,200 Equity Shares of face value of ₹10 each",
+      "amount_text": "Up to ₹[●] million",
+      "quote": "Himanshu Kantilal Sanghavi \nHUF \nUp to ₹[●] million Up to 25,200 Equity Shares of face \nvalue of ₹10 each",
+      "shares": 25200,
+      "amount_inr": null,
+      "amount_note": "no number in amount text",
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+          "page": 21,
+          "quote": "Himanshu Kantilal Sanghavi \nHUF \nUp to ₹[●] million Up to 25,200 Equity Shares of face \nvalue of ₹10 each"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 16216200.0,
+        "high": 34070400.0,
+        "kind": "estimate",
+        "working": "25,200 shares x ₹1,287-₹1,352 = ₹1.6 cr to ₹3.4 cr (gross proceeds, before tax and fees; source says 'up to', so low end uses 50% of shares (my assumption)) [price from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "timing": {
+        "status": "now",
+        "text": "Event dated 06 Mar 2026 (last day of '4 to 6 Mar, 2026'); cash likely already received [date from https://www.tradejini.com/blogs/sedemac-mechatronics-ipo-mainboard-mechatronics-ipo-in-mobility-and-industrial-markets]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "earlier_events": [],
+      "score": 0.5131
+    }
+  ],
+  "notes": [
+    "Manish Sharma (person kept, field removed): amount_text='Up to ₹[●] million' not in quote, dropped [https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF]",
+    "Ashwini Amit Dixit (person kept, field removed): amount_text='Up to ₹[●] million' not in quote, dropped [https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF]",
+    "A91 Emerging Fund II LLP (person kept, field removed): amount_text='Up to ₹[●] million' not in quote, dropped [https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF]",
+    "NRJN Family Trust (person kept, field removed): amount_text='Up to ₹[●] million' not in quote, dropped [https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF]",
+    "Xponentia Opportunities Fund II (person kept, field removed): amount_text='Up to ₹[●] million' not in quote, dropped [https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF]",
+    "Mace Private Limited (person kept, field removed): amount_text='Up to ₹[●] million' not in quote, dropped [https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF]",
+    "360 One Special Opportunities Fund – Series 8 (person kept, field removed): amount_text='Up to ₹[●] million' not in quote, dropped [https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF]",
+    "360 One Monopolistic Market Intermediaries Fund (person kept, field removed): amount_text='Up to ₹[●] million' not in quote, dropped [https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF]",
+    "HDFC Life Insurance Company Limited (person kept, field removed): amount_text='Up to ₹[●] million' not in quote, dropped [https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF]",
+    "Xponentia Opportunities Limited (person kept, field removed): amount_text='Up to ₹[●] million' not in quote, dropped [https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF]",
+    "Capri Global Holdings Private Limited: name not inside quote [https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF]"
+  ],
+  "cost": {
+    "calls": 4,
+    "cached_calls": 4,
+    "cost_usd": 0.0,
+    "seconds": 0.0
+  },
+  "per_person": [
+    0.0,
+    {}
+  ],
+  "wall_seconds": 0.3
+}
