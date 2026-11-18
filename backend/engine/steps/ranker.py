@@ -28,6 +28,51 @@ def confidence(person, n_sources):
     return round(max(0.05, min(score, 0.95)), 2), why
 
 
+def confidence_dimensions(person, n_sources):
+    identity_score, identity_why = confidence(person, n_sources)
+    known_links = {
+        "sold_in_offer", "tendered_in_buyback", "sold_to_acquirer", "esop",
+        "early_investor", "other",
+    }
+    transaction_score = 0.62 if person.get("link") in known_links else 0.35
+    transaction_why = ["transaction quote passed source verification"]
+    if person.get("role"):
+        transaction_score += 0.05
+        transaction_why.append("role is stated in the evidence quote")
+    if n_sources >= 2:
+        transaction_score += 0.15
+        transaction_why.append(f"transaction corroborated by {n_sources} source URLs")
+
+    amount = person.get("amount") or {}
+    amount_kind = amount.get("kind")
+    if amount_kind == "stated":
+        amount_score, amount_status = 0.95, "source-stated"
+    elif amount_kind == "estimate":
+        working = (amount.get("working") or "").lower()
+        if "assumption" in working or "up to" in working or "rounded" in working:
+            amount_score, amount_status = 0.55, "estimated-with-assumption"
+        else:
+            amount_score, amount_status = 0.75, "calculated-from-source"
+    else:
+        amount_score, amount_status = None, "not-estimable"
+
+    source_urls = sorted({item["url"] for item in person.get("evidence", []) if item.get("url")})
+    return {
+        "identity": {"score": identity_score, "reasons": identity_why},
+        "transaction": {
+            "score": round(min(transaction_score, 0.95), 2),
+            "reasons": transaction_why,
+        },
+        "amount": {"score": amount_score, "status": amount_status},
+        "corroboration": {
+            "source_count": len(source_urls),
+            "independent_sources": len(source_urls) >= 2,
+            "source_urls": source_urls,
+        },
+        "method": "Heuristic indicators; not calibrated probabilities.",
+    }
+
+
 def rank_score(person):
     amt = person["amount"]["high"] or 0
     # log scale so a 500 cr seller doesn't totally drown a 5 cr seller

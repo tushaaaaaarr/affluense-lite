@@ -106,6 +106,7 @@ def run_event(spec, follow_web=False):
         p["timing"] = estimator.estimate_timing(p, event_info)
         n_sources = len({e["url"] for e in p["evidence"]})
         p["confidence"], p["confidence_why"] = ranker.confidence(p, n_sources)
+        p["confidence_dimensions"] = ranker.confidence_dimensions(p, n_sources)
 
     # --- 4. follow-on leads -------------------------------------------------------------------
     for p in people:                                   # ledger is free, so check everyone
@@ -168,5 +169,6 @@ def run_event(spec, follow_web=False):
     return {"event": name, "event_info": event_info, "people": persons, "institutions": orgs,
             "notes": notes, "cost": costlog.summary(name), "per_person": costlog.per_person(name),
             "wall_seconds": wall, "analysis_status": analysis_status,
+            "run_id": costlog.run_id,
             "source_counts": {"attempted": sources_attempted, "succeeded": sources_succeeded,
                               "failed": sources_failed}}

@@ -1,8 +1,9 @@
 from fastapi.testclient import TestClient
 import base64
+import sqlite3
 
 from backend import app as api
-from engine.shared import costlog, llm
+from engine.shared import costlog, llm, reviews
 
 
 client = TestClient(api.app)
@@ -78,6 +79,7 @@ def test_log_routes_require_username_and_password(monkeypatch):
 
     assert response.status_code == 401
     assert response.headers["www-authenticate"] == "Basic"
+    assert client.get("/api/reviews").status_code == 401
 
     wrong_credentials = base64.b64encode(b"logs-user:wrong-pass").decode("ascii")
     wrong_response = client.get(
@@ -108,6 +110,35 @@ def test_log_routes_show_rows_and_download_csv(monkeypatch, tmp_path):
     assert download.status_code == 200
     assert "text/csv" in download.headers["content-type"]
     assert "run-1" in download.text
+
+
+def test_review_decisions_are_persisted_and_password_protected(monkeypatch):
+    monkeypatch.setattr(api, "LOGS_USERNAME", "logs-user")
+    monkeypatch.setattr(api, "LOGS_PASSWORD", "secret-pass")
+    db = sqlite3.connect(":memory:", check_same_thread=False)
+    db.execute(
+        "create table reviews (run_id text, event text, person text, decision text, note text, "
+        "updated_at text, primary key (run_id, person))"
+    )
+    monkeypatch.setattr(reviews, "_db", db)
+    encoded_credentials = base64.b64encode(b"logs-user:secret-pass").decode("ascii")
+    headers = {"Authorization": f"Basic {encoded_credentials}"}
+    payload = {
+        "run_id": "run-1",
+        "event": "Example IPO",
+        "person": "Rajesh Sharma",
+        "decision": "accepted",
+        "note": "Quote and amount checked.",
+    }
+
+    saved = client.post("/api/reviews", json=payload, headers=headers)
+    history = client.get("/api/reviews", headers=headers)
+
+    assert saved.status_code == 200
+    assert history.status_code == 200
+    assert history.json()["total"] == 1
+    assert history.json()["rows"][0]["decision"] == "accepted"
+    assert history.json()["rows"][0]["note"] == "Quote and amount checked."
 
 
 def test_upload_pdf_for_blocked_source(monkeypatch, tmp_path):

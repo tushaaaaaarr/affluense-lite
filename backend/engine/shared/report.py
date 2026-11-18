@@ -54,6 +54,10 @@ def write(result):
                   f"  - working: {p['amount']['working']}",
                   f"- **Timing:** {p['timing']['text']}",
                   f"- **Confidence (right person):** {p['confidence']} - {'; '.join(p['confidence_why'])}",
+                  f"- **Confidence dimensions (heuristics, not probabilities):** identity "
+                  f"{p['confidence_dimensions']['identity']['score']}, transaction "
+                  f"{p['confidence_dimensions']['transaction']['score']}, amount "
+                  f"{p['confidence_dimensions']['amount']['status']}",
                   f"- **Score:** {p['score']}"]
         if p.get("aliases"):
             lines.append(f"- **Also written as:** {', '.join(p['aliases'])}")

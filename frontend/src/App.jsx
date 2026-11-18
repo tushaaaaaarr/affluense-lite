@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as XLSX from "xlsx";
-import { ArrowDownRight, ArrowUpRight, CircleAlert, Download, ExternalLink, FileSpreadsheet, FileText, FileUp, KeyRound, LoaderCircle, Search, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Check, CircleAlert, ClipboardCheck, Download, ExternalLink, FileSpreadsheet, FileText, FileUp, Flag, KeyRound, LoaderCircle, Search, ShieldCheck, Sparkles, ThumbsDown, X } from "lucide-react";
 
 const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:8000").replace(/\/$/, "");
 
@@ -27,6 +27,12 @@ function reasonLabel(link) {
     other: "Other transaction",
   };
   return labels[link] || "Transaction not classified";
+}
+
+function csvCell(value) {
+  const raw = value == null ? "" : String(value);
+  const safe = /^[\s]*[=+\-@]/.test(raw) ? `'${raw}` : raw;
+  return `"${safe.replaceAll('"', '""')}"`;
 }
 
 function basicAuthHeader(username, password) {
@@ -67,6 +73,10 @@ function downloadWorkbook(result) {
     Timing: safeSpreadsheetText(person.timing?.status),
     "Timing details": safeSpreadsheetText(person.timing?.text),
     "Confidence (%)": Math.round((person.confidence || 0) * 100),
+    "Identity confidence (%)": Math.round((person.confidence_dimensions?.identity?.score ?? person.confidence ?? 0) * 100),
+    "Transaction confidence (%)": Math.round((person.confidence_dimensions?.transaction?.score ?? 0) * 100),
+    "Amount confidence": person.confidence_dimensions?.amount?.status || "not available",
+    "Source corroboration": person.confidence_dimensions?.corroboration?.source_count ?? person.evidence?.length ?? 0,
     "Priority score": person.score ?? "",
     "Call note": safeSpreadsheetText(person.brief),
     "Earlier events": safeSpreadsheetText((person.earlier_events || []).map((item) => item.event || item.name || "").filter(Boolean).join("; ")),
@@ -85,7 +95,7 @@ function downloadWorkbook(result) {
   };
 
   appendSheet("Summary", summaryRows, [24, 72]);
-  appendSheet("Leads", leads, [8, 14, 30, 30, 24, 20, 20, 24, 72, 15, 72, 16, 16, 72, 48]);
+  appendSheet("Leads", leads, [8, 14, 30, 30, 24, 20, 20, 24, 72, 15, 72, 16, 18, 19, 24, 20, 16, 72, 48]);
   appendSheet("Evidence", evidence, [14, 30, 72, 10, 100]);
   if (institutions.length) {
     appendSheet("Institutions", leads.filter((lead) => lead.Category === "Institution"), [8, 14, 36, 34, 24, 20, 20, 24, 72, 15, 72, 16, 16, 72, 48]);
@@ -112,6 +122,9 @@ function App() {
   const [logsError, setLogsError] = useState("");
   const [logsLoading, setLogsLoading] = useState(false);
   const [downloadLoading, setDownloadLoading] = useState(false);
+  const [reviewDecisions, setReviewDecisions] = useState({});
+  const [reviewNotes, setReviewNotes] = useState({});
+  const [reviewStatuses, setReviewStatuses] = useState({});
   const [sourceFile, setSourceFile] = useState(null);
   const [sourceFileUrl, setSourceFileUrl] = useState("");
 
@@ -171,7 +184,8 @@ function App() {
     setLogsError("");
     setLogsLoading(true);
     try {
-      const response = await fetch(`${API_URL}/api/logs/${kind}`, {
+      const endpoint = kind === "reviews" ? "/api/reviews" : `/api/logs/${kind}`;
+      const response = await fetch(`${API_URL}${endpoint}`, {
         headers: { Authorization: basicAuthHeader(logsUsername, logsPassword) },
       });
       const body = await response.json();
@@ -197,6 +211,20 @@ function App() {
     setLogsError("");
     setDownloadLoading(true);
     try {
+      if (logKind === "reviews") {
+        const rows = logData?.rows || [];
+        const columns = logData?.columns || [];
+        const content = [columns.map(csvCell).join(","), ...rows.map((row) => columns.map((column) => csvCell(row[column])).join(","))].join("\r\n");
+        const blobUrl = URL.createObjectURL(new Blob([content], { type: "text/csv;charset=utf-8" }));
+        const link = document.createElement("a");
+        link.href = blobUrl;
+        link.download = "rm_reviews.csv";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+        return;
+      }
       const response = await fetch(`${API_URL}/api/logs/csv/${logKind}`, {
         headers: { Authorization: basicAuthHeader(logsUsername, logsPassword) },
       });
@@ -221,6 +249,46 @@ function App() {
     }
   }
 
+  function reviewKey(person) {
+    return `${result?.run_id || result?.event || "run"}:${person.name}`;
+  }
+
+  async function saveReview(person) {
+    const key = reviewKey(person);
+    const decision = reviewDecisions[key];
+    if (!decision) {
+      setReviewStatuses((current) => ({ ...current, [key]: "Choose a review decision first." }));
+      return;
+    }
+    if (!logsUsername || !logsPassword) {
+      setReviewStatuses((current) => ({ ...current, [key]: "Sign in under Logs to save reviews." }));
+      setLogsOpen(true);
+      return;
+    }
+    setReviewStatuses((current) => ({ ...current, [key]: "Saving…" }));
+    try {
+      const response = await fetch(`${API_URL}/api/reviews`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: basicAuthHeader(logsUsername, logsPassword),
+        },
+        body: JSON.stringify({
+          run_id: result.run_id || result.event,
+          event: result.event,
+          person: person.name,
+          decision,
+          note: reviewNotes[key] || "",
+        }),
+      });
+      const body = await response.json();
+      if (!response.ok) throw new Error(body.detail || "Could not save this review.");
+      setReviewStatuses((current) => ({ ...current, [key]: "Saved to review history." }));
+    } catch (reason) {
+      setReviewStatuses((current) => ({ ...current, [key]: reason.message }));
+    }
+  }
+
   const people = result?.people || [];
   const topAmount = people[0]?.amount;
   const analysisStatus = result?.analysis_status || "complete";
@@ -232,7 +300,9 @@ function App() {
   };
   const logLabels = logKind === "costs"
     ? { run_id: "Run ID", time: "Time", event: "Event", stage: "Stage", person: "Person", model: "Model", in_tokens: "Input tokens", out_tokens: "Output tokens", cost_usd: "Cost (USD)", seconds: "Seconds", cached: "Cached" }
-    : { run_id: "Run ID", time: "Time", event: "Event", model: "Model", llm_calls: "Calls", cached_calls: "Cached", cost_usd: "Cost (USD)", wall_seconds: "Wall seconds", people: "People", cost_per_person_usd: "Cost / person" };
+    : logKind === "reviews"
+      ? { run_id: "Run ID", event: "Event", person: "Person", decision: "Decision", note: "Note", updated_at: "Reviewed at" }
+      : { run_id: "Run ID", time: "Time", event: "Event", model: "Model", llm_calls: "Calls", cached_calls: "Cached", cost_usd: "Cost (USD)", wall_seconds: "Wall seconds", people: "People", cost_per_person_usd: "Cost / person" };
 
   return (
     <main className="app-shell">
@@ -242,7 +312,7 @@ function App() {
           <span>affluense<span className="wordmark-lite"> / lite</span></span>
         </a>
         <div className="topbar-status"><span className="status-dot" /> PRIVATE BETA <span className="topbar-divider" /> INDIA</div>
-        <a className="docs-link" href="https://github.com/tushaaaaaarr/affluense-lite" target="_blank" rel="noreferrer">Project <ExternalLink size={14} /></a>
+        <div className="topbar-actions"><button className="logs-open-button" type="button" onClick={() => setLogsOpen(true)} aria-expanded={logsOpen}><ClipboardCheck size={14} /> Review & logs</button><a className="docs-link" href="https://github.com/tushaaaaaarr/affluense-lite" target="_blank" rel="noreferrer">Project <ExternalLink size={14} /></a></div>
       </header>
 
       <section className="intro" id="top">
@@ -313,9 +383,10 @@ function App() {
                 <div><span>TOP ESTIMATE</span><strong className="metric-amount">{amountLabel(topAmount)}</strong></div>
                 <div><span>MODEL COST</span><strong>${result.cost?.cost_usd?.toFixed(4) ?? "0.0000"}</strong></div>
               </div>
+              <div className="table-caption"><strong>{people.length} ranked {people.length === 1 ? "lead" : "leads"}</strong><span>{people.length > 0 ? "Scroll inside the table to browse the full list" : "No individual leads passed verification"}</span></div>
               <div className="table-wrap">
                 <table>
-                  <thead><tr><th>RANK / PERSON</th><th>WHY THEY GOT MONEY</th><th>EST. PROCEEDS</th><th>TIMING</th><th>CONFIDENCE</th><th>EVIDENCE</th></tr></thead>
+                  <thead><tr><th>RANK / PERSON</th><th>WHY THEY GOT MONEY</th><th>EST. PROCEEDS</th><th>TIMING</th><th>CONFIDENCE SIGNALS</th><th>EVIDENCE</th><th>RM REVIEW</th></tr></thead>
                   <tbody>
                     {people.map((person, index) => (
                       <tr key={`${person.name}-${index}`}>
@@ -323,11 +394,12 @@ function App() {
                         <td><strong className="reason-value">{reasonLabel(person.link)}</strong>{person.earlier_events?.length > 0 && <small className="cell-subtext">Earlier deal match available</small>}</td>
                         <td><strong className="amount-value">{amountLabel(person.amount)}</strong><small className="cell-subtext">{person.amount?.kind === "none" ? "Source has no number" : "Gross estimate, before tax / fees"}</small>{person.amount?.working && <details className="row-detail"><summary>Estimate working</summary><p>{person.amount.working}</p></details>}</td>
                         <td><span className={`timing-pill timing-${person.timing?.status || "unknown"}`}>{person.timing?.status === "now" ? <ArrowDownRight size={13} /> : <ArrowUpRight size={13} />}{person.timing?.status || "unknown"}</span><small className="cell-subtext timing-text">{person.timing?.text}</small></td>
-                        <td><div className="confidence"><span>{Math.round((person.confidence || 0) * 100)}%</span><i><b style={{ width: `${Math.round((person.confidence || 0) * 100)}%` }} /></i></div><small className="cell-subtext">Person match</small></td>
+                        <td><div className="confidence"><span>{Math.round((person.confidence || 0) * 100)}%</span><i><b style={{ width: `${Math.round((person.confidence || 0) * 100)}%` }} /></i></div><small className="cell-subtext">Identity match</small><details className="row-detail"><summary>Confidence breakdown</summary><div className="signal-list"><span>Identity <b>{Math.round((person.confidence_dimensions?.identity?.score ?? person.confidence ?? 0) * 100)}%</b></span><span>Transaction <b>{Math.round((person.confidence_dimensions?.transaction?.score ?? 0) * 100)}%</b></span><span>Amount <b>{person.confidence_dimensions?.amount?.score == null ? "Not estimable" : `${Math.round(person.confidence_dimensions.amount.score * 100)}%`}</b></span><span>Sources <b>{person.confidence_dimensions?.corroboration?.source_count ?? person.evidence?.length ?? 0}</b></span></div><small className="signal-note">Heuristic indicators, not calibrated probabilities.</small></details></td>
                         <td>{person.evidence?.length ? <details className="evidence-details"><summary>{person.evidence.length} source{person.evidence.length === 1 ? "" : "s"}</summary>{person.evidence.map((item, evidenceIndex) => <div className="evidence-item" key={`${item.url}-${evidenceIndex}`}><a className="evidence-link" href={item.url} target="_blank" rel="noreferrer">Open source{item.page ? ` · p. ${item.page}` : ""}<ExternalLink size={12} /></a><blockquote>{item.quote}</blockquote></div>)}</details> : <span className="cell-subtext">Not available</span>}</td>
+                        <td><div className="review-controls"><select aria-label={`Review decision for ${person.name}`} value={reviewDecisions[reviewKey(person)] || ""} onChange={(event) => setReviewDecisions((current) => ({ ...current, [reviewKey(person)]: event.target.value }))}><option value="">Choose decision</option><option value="accepted">Accept lead</option><option value="rejected">Reject lead</option><option value="needs_review">Flag for review</option></select><input aria-label={`Review note for ${person.name}`} value={reviewNotes[reviewKey(person)] || ""} onChange={(event) => setReviewNotes((current) => ({ ...current, [reviewKey(person)]: event.target.value }))} placeholder="Optional note" maxLength={1000} /><button className="review-save-button" type="button" onClick={() => saveReview(person)} disabled={reviewStatuses[reviewKey(person)] === "Saving…"}>{reviewStatuses[reviewKey(person)] === "Saving…" ? "Saving…" : "Save review"}</button>{reviewStatuses[reviewKey(person)] && <small className="review-status">{reviewStatuses[reviewKey(person)]}</small>}</div></td>
                       </tr>
                     ))}
-                    {people.length === 0 && <tr><td className="no-people" colSpan="6">{analysisStatus === "failed" ? "No sources were successfully analyzed. See the run notes." : "Sources were analyzed; no individuals passed the evidence checks."}</td></tr>}
+                    {people.length === 0 && <tr><td className="no-people" colSpan="7">{analysisStatus === "failed" ? "No sources were successfully analyzed. See the run notes." : "Sources were analyzed; no individuals passed the evidence checks."}</td></tr>}
                   </tbody>
                 </table>
               </div>
@@ -345,7 +417,8 @@ function App() {
           )}
         </section>
       </div>
-      <section className="logs-section" aria-labelledby="logs-heading">
+      {logsOpen && <div className="logs-modal-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) setLogsOpen(false); }}><section className="logs-section logs-modal" role="dialog" aria-modal="true" aria-labelledby="logs-heading">
+        <div className="logs-modal-bar"><span>OPERATIONS & REVIEW</span><button className="logs-close-button" type="button" aria-label="Close review and logs" onClick={() => setLogsOpen(false)}><X size={17} /></button></div>
         <div className="logs-heading"><div><div className="panel-kicker">03 <span> / </span> OPERATIONS</div><h2 id="logs-heading">Run and cost logs</h2></div><p>Review model calls, cached runs, token counts, and per-person cost records.</p></div>
         <div className="logs-access">
           <label htmlFor="logs-username"><KeyRound size={14} /> Log sign-in</label>
@@ -356,12 +429,13 @@ function App() {
           <div className="log-tabs" role="tablist" aria-label="Log type">
             <button type="button" role="tab" aria-selected={logKind === "runs"} className={logKind === "runs" ? "active" : ""} onClick={() => loadLogs("runs")}>Run history</button>
             <button type="button" role="tab" aria-selected={logKind === "costs"} className={logKind === "costs" ? "active" : ""} onClick={() => loadLogs("costs")}>Model calls</button>
+            <button type="button" role="tab" aria-selected={logKind === "reviews"} className={logKind === "reviews" ? "active" : ""} onClick={() => loadLogs("reviews")}>RM reviews</button>
           </div>
-          <button type="button" className="secondary-button" onClick={downloadLogCsv} disabled={downloadLoading || !logData?.total}>{downloadLoading ? "Preparing…" : <><FileText size={14} /> Download {logKind === "costs" ? "cost_log.csv" : "runs.csv"}</>}</button>
+          <button type="button" className="secondary-button" onClick={downloadLogCsv} disabled={downloadLoading || !logData?.total}>{downloadLoading ? "Preparing…" : <><FileText size={14} /> Download {logKind === "reviews" ? "rm_reviews.csv" : logKind === "costs" ? "cost_log.csv" : "runs.csv"}</>}</button>
         </div>
         {logsError && <div className="error-message logs-error" role="alert"><CircleAlert size={16} /> {logsError}</div>}
         {logData && <><p className="logs-count">Showing {logData.rows.length} of {logData.total} {logKind === "costs" ? "model calls" : "runs"}. Download CSV for the complete file.</p><div className="table-wrap logs-table-wrap"><table className="logs-table"><thead><tr>{logData.columns.map((column) => <th key={column}>{logLabels[column] || column}</th>)}</tr></thead><tbody>{logData.rows.map((row, rowIndex) => <tr key={`${row.run_id}-${row.time}-${rowIndex}`}>{logData.columns.map((column) => <td key={column}>{row[column] || "—"}</td>)}</tr>)}{logData.rows.length === 0 && <tr><td className="no-people" colSpan={logData.columns.length}>No log entries yet.</td></tr>}</tbody></table></div></>}
-      </section>
+      </section></div>}
       <footer className="page-footer"><span>© AFFLUENSE LITE</span><span>ESTIMATES ARE EVIDENCE-BASED, NOT FINANCIAL ADVICE</span><span>BUILT FOR BETTER CALLS <ArrowUpRight size={13} /></span></footer>
     </main>
   );

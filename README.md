@@ -100,6 +100,21 @@ backend, and load either **Run history** (`runs.csv`) or **Model calls** (`cost_
 shows the latest 100 rows and downloads the complete CSV. Access is password-protected because call
 logs may contain names. A fresh deployment shows empty logs until it has processed an event.
 
+### Evidence review and evaluation
+
+Each lead separates identity-match, transaction-evidence, and amount-method indicators. The source
+count and URLs show whether evidence is corroborated across independent links. These are transparent
+rule-based heuristics, not calibrated probabilities; the amount range and its working remain separate.
+Use the per-row **RM review** control to accept, reject, or flag a lead and optionally record a note.
+Decisions are upserted by run and person in `backend/cache/reviews.sqlite`; **Review and logs → RM
+reviews** shows recent decisions and can export them as CSV. Review endpoints use the same Basic
+sign-in as cost logs. The database is local/ephemeral on a free Render instance.
+
+Run `python -m pytest -q` for the offline evaluation set. It includes source-quote verification,
+buyback spokesperson rejection, ambiguous-name handling, corroboration signals, and valid no-lead
+outcomes. Live event outputs are also retained in `backend/outputs/<event>/report.json` for manual
+spot checks.
+
 **What the real runs cost** (model `gemini-3.5-flash-lite`, paid-tier prices; see `backend/outputs/runs.csv`):
 SEDEMAC IPO $0.021 (582-page prospectus, 18 people, 4 model calls, 20 s) · Jio IPO $0.0041.
 BrowserStack first run $0.0013 (2 calls; cached rerun $0) · Info Edge/Coding Ninjas $0.0027 (2 calls).
@@ -151,7 +166,8 @@ certificate store, so HTTPS works without turning off verification.
      │            stops at: depth 1, top 3 people, 2 URLs each, cached, inside the $2 cap
      v
  [6 RANK]         backend/engine/steps/ranker.py                             CODE
-     │            score = 50% amount + 30% confidence + 20% timing; companies go to a separate list
+     │            score = 50% amount + 30% confidence + 20% timing; separate identity/transaction/amount signals
+     │            and source corroboration are reported as heuristics, not probabilities
      v
  [7 BRIEF]        backend/engine/steps/briefer.py                            LLM + CODE
      │            ONE call writes notes for up to 10 people; each person's facts only.

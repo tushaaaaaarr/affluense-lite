@@ -162,6 +162,32 @@ def test_buyback_spokesperson_quote_is_not_seller_evidence():
     assert "buyback participation" in problems[0]
 
 
+def test_confidence_dimensions_separate_identity_transaction_and_amount():
+    from engine.steps import ranker
+
+    person = {
+        "name": "Rajesh Sharma",
+        "role": "Promoter",
+        "link": "sold_in_offer",
+        "aliases": [],
+        "possible_matches": [],
+        "amount": {"kind": "estimate", "working": "source says 'up to'; 50% is an assumption"},
+        "evidence": [
+            {"url": "https://example.com/filing.pdf"},
+            {"url": "https://example.com/press-release"},
+        ],
+    }
+
+    dimensions = ranker.confidence_dimensions(person, n_sources=2)
+
+    assert dimensions["identity"]["score"] == ranker.confidence(person, 2)[0]
+    assert dimensions["transaction"]["score"] > 0.62
+    assert dimensions["amount"] == {"score": 0.55, "status": "estimated-with-assumption"}
+    assert dimensions["corroboration"]["independent_sources"] is True
+    assert len(dimensions["corroboration"]["source_urls"]) == 2
+    assert "not calibrated probabilities" in dimensions["method"]
+
+
 def test_unverified_date_is_dropped():
     ev = verify.check_event_price({"date": "05 March 2026", "date_quote": "opens on 4 March 2026"},
                                   "The issue opens on 4 March 2026.")

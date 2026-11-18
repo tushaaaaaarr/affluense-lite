@@ -11,7 +11,7 @@ from uuid import uuid4
 from typing import Literal
 from urllib.parse import urlparse
 
-from fastapi import Depends, FastAPI, File, Form, HTTPException, Response, UploadFile
+from fastapi import Depends, FastAPI, File, Form, HTTPException, Query, Response, UploadFile
 from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
@@ -19,7 +19,7 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field, field_validator
 
 from engine import pipeline
-from engine.shared import config, costlog
+from engine.shared import config, costlog, reviews
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -60,6 +60,14 @@ class AnalyzeRequest(BaseModel):
     @classmethod
     def validate_urls(cls, urls):
         return [_validate_public_url(url) for url in urls]
+
+
+class ReviewRequest(BaseModel):
+    run_id: str = Field(min_length=1, max_length=64)
+    event: str = Field(min_length=1, max_length=160)
+    person: str = Field(min_length=1, max_length=200)
+    decision: Literal["accepted", "rejected", "needs_review"]
+    note: str = Field(default="", max_length=1000)
 
 
 app = FastAPI(title="Affluense-lite API", version="1.0.0")
@@ -119,6 +127,27 @@ async def read_log(kind: Literal["costs", "runs"]):
         with path.open(newline="", encoding="utf-8") as file:
             rows = list(csv.DictReader(file))
     return {"columns": fields, "rows": list(reversed(rows[-100:])), "total": len(rows)}
+
+
+@app.post("/api/reviews", dependencies=[Depends(_require_logs_access)])
+async def save_review(request: ReviewRequest):
+    return reviews.save(
+        request.run_id,
+        request.event.strip(),
+        request.person.strip(),
+        request.decision,
+        request.note.strip(),
+    )
+
+
+@app.get("/api/reviews", dependencies=[Depends(_require_logs_access)])
+async def read_reviews(limit: int = Query(default=100, ge=1, le=500)):
+    rows = reviews.list_recent(limit)
+    return {
+        "columns": ["run_id", "event", "person", "decision", "note", "updated_at"],
+        "rows": rows,
+        "total": len(rows),
+    }
 
 
 async def _analyze(spec, follow_web):
