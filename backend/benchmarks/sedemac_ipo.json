@@ -1,0 +1,33 @@
+{
+  "name": "SEDEMAC Mechatronics IPO - selling shareholders",
+  "source_url": "https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1773656117962.PDF",
+  "checked_against": "Red Herring Prospectus dated 25 Feb 2026, pages 20-21 (Offer for Sale table) and the 'Investor Selling Shareholders' definition on page 3. Share counts add up to the stated 8,043,300 offered shares.",
+  "link": "sold_in_offer",
+  "individuals": [
+    {"name": "Manish Sharma", "shares": 45000},
+    {"name": "Ashwini Amit Dixit", "shares": 67500},
+    {"name": "Cyrus Jamshed Guzder", "shares": 132000},
+    {"name": "Devang Mehta", "shares": 16650},
+    {"name": "Atul Hiralal Shah", "shares": 12600},
+    {"name": "Bakul Hiralal Shah", "shares": 12600},
+    {"name": "Devinjit Singh", "shares": 6750},
+    {"name": "Perumal Ramamurthy Srinivasan", "shares": 6750},
+    {"name": "Bhavya Kapoor", "shares": 4500},
+    {"name": "Rahul Bahri", "shares": 1800}
+  ],
+  "institutions": [
+    {"name": "A91 Emerging Fund II LLP", "shares": 2410650},
+    {"name": "NRJN Family Trust", "shares": 1050000},
+    {"name": "Xponentia Opportunities Fund II", "shares": 1043550},
+    {"name": "Mace Private Limited", "shares": 765900},
+    {"name": "360 One Special Opportunities Fund - Series 8", "shares": 680850},
+    {"name": "360 One Monopolistic Market Intermediaries Fund", "shares": 472500},
+    {"name": "HDFC Life Insurance Company Limited", "shares": 425700},
+    {"name": "Xponentia Opportunities Limited", "shares": 425250},
+    {"name": "Society for Innovation and Entrepreneurship", "shares": 204000},
+    {"name": "Capri Global Holdings Private Limited", "shares": 85050},
+    {"name": "SVS Trust No IV", "shares": 85050},
+    {"name": "Venktesh Investment and Trading Company Private Limited", "shares": 63450},
+    {"name": "Himanshu Kantilal Sanghavi HUF", "shares": 25200}
+  ]
+}

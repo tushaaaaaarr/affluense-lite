@@ -24,6 +24,7 @@ def _join_split_numbers(s):
 def norm(s):
     s = (s or "").lower()
     s = s.replace("\u2019", "'").replace("\u201c", '"').replace("\u201d", '"')
+    s = re.sub(r"₹\s+", "₹", s)          # models often copy "₹10" as "₹ 10"
     return _join_split_numbers(re.sub(r"\s+", " ", s).strip())
 
 
@@ -98,6 +99,22 @@ def name_in_quote(name, quote):
     return max(words, key=len) in norm(quote)
 
 
+def _states_buyback_participation(text):
+    mentions_buyback = any(term in text for term in ("buyback", "buy-back", "tender offer"))
+    states_participation = re.search(
+        r"\b(tender(?:ed|ing)?|sold|selling|sell|participat(?:e|ed|ing)|eligible|receiv(?:e|ed|ing)|benefit(?:ed|ing))\b",
+        text,
+    )
+    return mentions_buyback and bool(states_participation)
+
+
+def _text_before(quote, source_text, chars=1200):
+    """The source text just before a quote, e.g. the heading above a table row."""
+    source, q = norm(source_text), norm(quote)
+    at = source.find(q)
+    return source[max(0, at - chars):at] if at >= 0 else ""
+
+
 def check_person(p, source_text):
     """Returns (cleaned_person_or_None, list_of_problems)."""
     problems = []
@@ -107,13 +124,10 @@ def check_person(p, source_text):
     if not name_in_quote(p.get("name", ""), quote):
         return None, ["name not inside quote"]
     if p.get("link") == "tendered_in_buyback":
-        normalized_quote = norm(quote)
-        mentions_buyback = any(term in normalized_quote for term in ("buyback", "buy-back", "tender offer"))
-        states_participation = re.search(
-            r"\b(tender(?:ed|ing)?|sold|selling|sell|participat(?:e|ed|ing)|eligible|receiv(?:e|ed|ing)|benefit(?:ed|ing))\b",
-            normalized_quote,
-        )
-        if not (mentions_buyback and states_participation):
+        # a table row ("1. Mr. X 99,23,930") counts if the heading right above it says they tender
+        row_like = re.search(r"\d[\d,]{4,}", quote)
+        if not (_states_buyback_participation(norm(quote))
+                or (row_like and _states_buyback_participation(_text_before(quote, source_text)))):
             return None, ["quote does not explicitly connect person to buyback participation"]
 
     # preferred path: model copied the words, code reads the number
@@ -144,6 +158,10 @@ def check_person(p, source_text):
     if p.get("shares") is not None:
         p["shares"] = int(p["shares"])
 
+    # a promoter named in a buyback filing may hold nothing; without a number they are not a lead
+    if p.get("link") in ("tendered_in_buyback", "other") and not (p.get("shares") or p.get("amount_inr")):
+        return None, problems + ["no share count or amount for this person in the quote"]
+
     # a role is a fact too: keep it only if the quote says it
     role = p.get("role")
     if role and norm(role) not in norm(quote):
@@ -168,4 +186,23 @@ def check_event_price(ev, source_text):
     dq = ev.get("date_quote") or ""
     if not (quote_in_source(dq, source_text) and norm(ev.get("date")) in norm(dq)):
         ev["date"] = ev["date_quote"] = None
+
+    # total deal size: the copied words must sit inside a real quote; code reads the number
+    st, sq = ev.get("size_text") or "", ev.get("size_quote") or ""
+    size = parse_money(st)[0] if st and quote_in_source(sq, source_text) and norm(st) in norm(sq) else None
+    ev["deal_size_inr"] = size
+    if size is None:
+        ev["size_text"] = ev["size_quote"] = None
+
+    # buyback entitlement: "10 Equity Shares for every 773 Equity Shares" -> 10/773
+    rt, rq = ev.get("ratio_text") or "", ev.get("ratio_quote") or ""
+    ratio = None
+    if rt and quote_in_source(rq, source_text) and norm(rt) in norm(rq):
+        m = re.search(r"(\d[\d,]*)\s+equity shares?\s+(?:for|out of)\s+every\s+(\d[\d,]*)", norm(rt))
+        if m:
+            got, every = float(_canon(m.group(1))), float(_canon(m.group(2)))
+            ratio = got / every if 0 < got < every else None
+    ev["accept_ratio"] = ratio
+    if ratio is None:
+        ev["ratio_text"] = ev["ratio_quote"] = None
     return ev

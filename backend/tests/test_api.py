@@ -1,12 +1,29 @@
 from fastapi.testclient import TestClient
 import base64
+import json
+import socket
 import sqlite3
 
+import pytest
+
 from backend import app as api
-from engine.shared import costlog, llm, reviews
+from engine.shared import config, costlog, llm, reviews
 
 
 client = TestClient(api.app)
+
+
+@pytest.fixture(autouse=True)
+def public_example_dns(monkeypatch):
+    # some networks resolve example.com to a private proxy address, which the URL guard rejects
+    real = socket.getaddrinfo
+
+    def fake(host, *args, **kwargs):
+        if host == "example.com":
+            return [(socket.AF_INET, socket.SOCK_STREAM, 6, "", ("93.184.215.14", 443))]
+        return real(host, *args, **kwargs)
+
+    monkeypatch.setattr(socket, "getaddrinfo", fake)
 
 
 def test_health():
@@ -69,6 +86,68 @@ def test_analyze_can_access_llm_cache_from_worker_thread(monkeypatch):
 
     assert response.status_code == 200
     assert response.json() == expected
+
+
+def test_analyze_streams_progress_then_result(monkeypatch):
+    expected = {"event": "Example IPO", "people": [], "institutions": [], "cost": {"cost_usd": 0}}
+
+    def run_event(spec, follow_web=False, on_progress=None):
+        on_progress("fetch", "Read filing.pdf", {"chars": 10})
+        on_progress("extract", "1 mention passed the quote check", {"verified": 1})
+        return expected
+
+    monkeypatch.setattr(api.pipeline, "run_event", run_event)
+    response = client.post("/api/events/analyze", json={
+        "name": "Example IPO",
+        "urls": ["https://example.com/filing.pdf"],
+        "stream": True,
+    })
+    events = [json.loads(line) for line in response.text.splitlines() if line]
+
+    assert response.status_code == 200
+    assert "application/x-ndjson" in response.headers["content-type"]
+    assert [e["stage"] for e in events if e["type"] == "progress"] == ["fetch", "extract"]
+    assert events[-1] == {"type": "result", "result": expected}
+
+
+def test_stream_reports_failure_without_internal_details(monkeypatch):
+    def run_event(spec, follow_web=False, on_progress=None):
+        raise RuntimeError("secret stack detail")
+
+    monkeypatch.setattr(api.pipeline, "run_event", run_event)
+    response = client.post("/api/events/analyze", json={
+        "name": "Example IPO",
+        "urls": ["https://example.com/filing.pdf"],
+        "stream": True,
+    })
+    last = json.loads(response.text.splitlines()[-1])
+
+    assert last["type"] == "error"
+    assert "secret" not in last["detail"]
+
+
+def test_saved_runs_are_listed_and_reopened():
+    folder = config.OUT_DIR / "example-ipo"
+    folder.mkdir()
+    lead = {"name": "Rajesh Sharma", "link": "sold_in_offer", "confidence": 0.6,
+            "amount": {"high": 50_000_000}, "timing": {"status": "now"}, "evidence": []}
+    (folder / "report.json").write_text(json.dumps({
+        "event": "Example IPO", "people": [lead], "institutions": [], "cost": {"cost_usd": 0.01},
+    }), encoding="utf-8")
+
+    runs = client.get("/api/runs").json()["runs"]
+    saved = client.get("/api/runs/example-ipo").json()
+
+    assert runs[0]["id"] == "example-ipo"
+    assert runs[0]["people"] == 1
+    assert saved["event"] == "Example IPO"
+    assert set(saved["people"][0]["score_parts"]) == {"amount", "confidence", "timing"}
+
+
+def test_saved_run_ids_cannot_escape_the_outputs_folder():
+    assert client.get("/api/runs/..%2F..%2Fapp").status_code == 404
+    assert client.get("/api/runs/Not_A_Run").status_code == 404
+    assert client.get("/api/runs/missing-run").status_code == 404
 
 
 def test_log_routes_require_username_and_password(monkeypatch):

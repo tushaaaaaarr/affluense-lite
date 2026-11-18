@@ -16,6 +16,8 @@ from engine.shared import config
 
 
 def crore(x):
+    if x < 1e6:
+        return f"₹{x / 1e5:,.2f} lakh"
     return f"₹{x / 1e7:,.1f} cr"
 
 
@@ -47,6 +49,8 @@ def estimate_amount(person, event):
 
     shares = person.get("shares")
     lo_p, hi_p = event.get("price_low"), event.get("price_high")
+    if shares and lo_p and hi_p and person.get("link") == "tendered_in_buyback":
+        return _buyback_amount(shares, lo_p, hi_p, event)
     if shares and lo_p and hi_p:
         low, high = shares * lo_p, shares * hi_p
         if person.get("link") == "esop":
@@ -64,6 +68,31 @@ def estimate_amount(person, event):
 
     return {"low": None, "high": None, "kind": "none",
             "working": "source gives no share count or amount; not estimated"}
+
+
+def _buyback_amount(shares, lo_p, hi_p, event):
+    """A tender buyback accepts shares pro rata, so shares offered x price is only a ceiling.
+    Low end = the entitlement the company must accept; high end = everything accepted, but never
+    more than the whole buyback."""
+    high = shares * hi_p
+    steps = [f"{shares:,} shares offered x ₹{hi_p:,.0f} = {crore(high)} if every share were accepted"]
+    cap = event.get("deal_size_inr")
+    if cap and high > cap:
+        high = cap
+        steps.append(f"capped at the whole buyback size of {crore(cap)} [size from {event['size_url']}]")
+    ratio = event.get("accept_ratio")
+    if ratio:
+        entitled = int(shares * ratio)
+        low = min(entitled * lo_p, high)
+        steps.append(f"low end = entitlement '{event['ratio_text']}' ({ratio:.3%}) x {shares:,} = "
+                     f"{entitled:,} shares x ₹{lo_p:,.0f} = {crore(low)} [ratio from {event['ratio_url']}]")
+        note = "acceptance above the entitlement depends on how many other holders tender"
+    else:
+        low = high * config.UP_TO_FACTOR
+        note = (f"no entitlement ratio found, so low end uses {int(config.UP_TO_FACTOR * 100)}% "
+                f"(my assumption)")
+    return {"low": low, "high": high, "kind": "estimate",
+            "working": "; ".join(steps) + f" (gross, before tax and fees; {note})"}
 
 
 def _read_date(d):
@@ -90,6 +119,10 @@ def estimate_timing(person, event):
     if person.get("link") == "esop":
         return {"status": "unknown", "text": "ESOP payouts follow their own vesting/exercise rules"}
     src = f" [date from {event['date_url']}]" if event.get("date_url") else ""
+    if "record date" in (event.get("date_quote") or "").lower():
+        # a record date only fixes who may take part; the money comes after the offer closes
+        return {"status": "later", "text": f"Record date {when:%d %b %Y}{how}; payment follows the "
+                                           f"offer's closing date (see the filing's schedule){src}"}
     if when <= date.today():
         return {"status": "now", "text": f"Event dated {when:%d %b %Y}{how}; cash likely already received{src}"}
     return {"status": "later", "text": f"Event dated {when:%d %b %Y}{how}; cash expected after this{src}"}

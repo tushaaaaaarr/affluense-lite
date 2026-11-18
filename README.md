@@ -18,7 +18,7 @@ copy backend/.env.example backend/.env  # then paste your key into backend/.env
 
 # a saved event
 python backend/run.py backend/events/sedemac_ipo.json
-python backend/run.py backend/events/browserstack_esop_buyback.json
+python backend/run.py backend/events/fdc_buyback.json
 python backend/run.py backend/events/coding_ninjas_acquisition.json
 
 # a brand-new event, live (this is what you do on the call)
@@ -76,6 +76,16 @@ Event name: Jio Platforms IPO (Oct 2026)
 Source links:
 https://www.sebi.gov.in/sebi_data/attachdocs/oct-2026/1792045029108.pdf
 ```
+
+**FDC Limited buyback** (tender offer; the Letter of Offer names the promoters who intend to tender)
+```text
+Event name: FDC Limited buyback (Nov 2026)
+Source links:
+https://www.sebi.gov.in/filings/buybacks/oct-2026/fdc-limited_105562.html
+```
+The SEBI filing page is expanded to its Letter of Offer and Public Announcement. Each promoter's range
+runs from their guaranteed entitlement (the filing's general-category ratio x shares offered x ₹500)
+up to everything accepted, capped at the ₹120 crore buyback size.
 
 **BrowserStack ESOP buyback** (official company announcement; recipients are not individually named)
 ```text

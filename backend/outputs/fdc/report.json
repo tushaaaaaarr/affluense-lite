@@ -1,0 +1,682 @@
+{
+  "event": "FDC",
+  "event_info": {
+    "price_low": 500.0,
+    "price_high": 500.0,
+    "price_quote": "for cash at a price of ₹ 500 (Rupees Five Hundred Only) (“Buyback Price”) per Equity Share for",
+    "price_url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+    "date": "November 26, 2026",
+    "date_quote": "Buyback Window Closing Date Thursday, November 26, 2026",
+    "date_url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+    "deal_size_inr": 1200000000.0,
+    "size_quote": "for an aggregate amount of upto ₹ 120.00 Crore (Rupees One Hundred Twenty Crore only) (“Buyback Size”) excluding the Transaction Cost, and",
+    "size_url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+    "accept_ratio": 0.0129366106080207,
+    "ratio_text": "10 Equity Shares for every 773 Equity Shares held on the Record Date",
+    "ratio_quote": "GENERAL CATEOGRY FOR ALL OTHER SHAREHOLDERS 10 Equity Shares for every 773 Equity Shares held on the Record Date",
+    "ratio_url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+    "company": "FDC Limited",
+    "kind": "buyback"
+  },
+  "people": [
+    {
+      "name": "Mr. Ameya Ashok Chandavarkar",
+      "role": null,
+      "link": "tendered_in_buyback",
+      "shares_text": "99,23,930",
+      "amount_text": null,
+      "quote": "1. Mr. Ameya Ashok Chandavarkar 99,23,930 99,23,930",
+      "shares": 9923930,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+          "page": 17,
+          "quote": "1. Mr. Ameya Ashok Chandavarkar 99,23,930 99,23,930"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 64191000.0,
+        "high": 1200000000.0,
+        "kind": "estimate",
+        "working": "9,923,930 shares offered x ₹500 = ₹496.2 cr if every share were accepted; capped at the whole buyback size of ₹120.0 cr [size from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]; low end = entitlement '10 Equity Shares for every 773 Equity Shares held on the Record Date' (1.294%) x 9,923,930 = 128,382 shares x ₹500 = ₹6.4 cr [ratio from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf] (gross, before tax and fees; acceptance above the entitlement depends on how many other holders tender)"
+      },
+      "timing": {
+        "status": "later",
+        "text": "Event dated 26 Nov 2026; cash expected after this [date from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "confidence_dimensions": {
+        "identity": {
+          "score": 0.5,
+          "reasons": [
+            "named with a verified quote in a source"
+          ]
+        },
+        "transaction": {
+          "score": 0.62,
+          "reasons": [
+            "transaction quote passed source verification"
+          ]
+        },
+        "amount": {
+          "score": 0.75,
+          "status": "calculated-from-source"
+        },
+        "corroboration": {
+          "source_count": 1,
+          "independent_sources": false,
+          "source_urls": [
+            "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf"
+          ]
+        },
+        "method": "Heuristic indicators; not calibrated probabilities."
+      },
+      "earlier_events": [
+        {
+          "name_there": "Ameya Ashok Chandavarkar",
+          "event": "FDC Limited buyback (Nov 2026)",
+          "link": "tendered_in_buyback",
+          "match": "same"
+        }
+      ],
+      "score": 0.6549,
+      "score_parts": {
+        "amount": {
+          "points": 0.3849,
+          "max": 0.5
+        },
+        "confidence": {
+          "points": 0.15,
+          "max": 0.3
+        },
+        "timing": {
+          "points": 0.12,
+          "max": 0.2
+        }
+      },
+      "brief": "Mr. Ameya Ashok Chandavarkar tendered shares in the FDC buyback dated 26 Nov 2026, with cash expected after this date. Gross amounts range from ₹6.4 cr at the entitlement low end up to ₹496.2 cr if all offered shares are accepted, subject to the ₹120.0 cr buyback size cap. Confidence is 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Ms. Nomita Ramdas Chandavarkar",
+      "role": null,
+      "link": "tendered_in_buyback",
+      "shares_text": "3,69,16,689",
+      "amount_text": null,
+      "quote": "2. Ms. Nomita Ramdas Chandavarkar 3,69,16,689 3,69,16,689",
+      "shares": 36916689,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+          "page": 17,
+          "quote": "2. Ms. Nomita Ramdas Chandavarkar 3,69,16,689 3,69,16,689"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 238788000.0,
+        "high": 1200000000.0,
+        "kind": "estimate",
+        "working": "36,916,689 shares offered x ₹500 = ₹1,845.8 cr if every share were accepted; capped at the whole buyback size of ₹120.0 cr [size from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]; low end = entitlement '10 Equity Shares for every 773 Equity Shares held on the Record Date' (1.294%) x 36,916,689 = 477,576 shares x ₹500 = ₹23.9 cr [ratio from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf] (gross, before tax and fees; acceptance above the entitlement depends on how many other holders tender)"
+      },
+      "timing": {
+        "status": "later",
+        "text": "Event dated 26 Nov 2026; cash expected after this [date from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "confidence_dimensions": {
+        "identity": {
+          "score": 0.5,
+          "reasons": [
+            "named with a verified quote in a source"
+          ]
+        },
+        "transaction": {
+          "score": 0.62,
+          "reasons": [
+            "transaction quote passed source verification"
+          ]
+        },
+        "amount": {
+          "score": 0.75,
+          "status": "calculated-from-source"
+        },
+        "corroboration": {
+          "source_count": 1,
+          "independent_sources": false,
+          "source_urls": [
+            "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf"
+          ]
+        },
+        "method": "Heuristic indicators; not calibrated probabilities."
+      },
+      "earlier_events": [
+        {
+          "name_there": "Nomita Ramdas Chandavarkar",
+          "event": "FDC Limited buyback (Nov 2026)",
+          "link": "tendered_in_buyback",
+          "match": "same"
+        }
+      ],
+      "score": 0.6549,
+      "score_parts": {
+        "amount": {
+          "points": 0.3849,
+          "max": 0.5
+        },
+        "confidence": {
+          "points": 0.15,
+          "max": 0.3
+        },
+        "timing": {
+          "points": 0.12,
+          "max": 0.2
+        }
+      },
+      "brief": "Ms. Nomita Ramdas Chandavarkar tendered shares in the FDC buyback dated 26 Nov 2026, with cash expected after this date. Gross amounts range from ₹23.9 cr at the entitlement low end up to ₹1,845.8 cr if all offered shares are accepted, subject to the ₹120.0 cr buyback size cap. Confidence is 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Mrs. Aditi C Bhanot",
+      "role": null,
+      "link": "tendered_in_buyback",
+      "shares_text": "1,10,69,381",
+      "amount_text": null,
+      "quote": "4. Mrs. Aditi C Bhanot 1,10,69,381 1,10,69,381",
+      "shares": 11069381,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+          "page": 17,
+          "quote": "4. Mrs. Aditi C Bhanot 1,10,69,381 1,10,69,381"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 71600000.0,
+        "high": 1200000000.0,
+        "kind": "estimate",
+        "working": "11,069,381 shares offered x ₹500 = ₹553.5 cr if every share were accepted; capped at the whole buyback size of ₹120.0 cr [size from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]; low end = entitlement '10 Equity Shares for every 773 Equity Shares held on the Record Date' (1.294%) x 11,069,381 = 143,200 shares x ₹500 = ₹7.2 cr [ratio from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf] (gross, before tax and fees; acceptance above the entitlement depends on how many other holders tender)"
+      },
+      "timing": {
+        "status": "later",
+        "text": "Event dated 26 Nov 2026; cash expected after this [date from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "confidence_dimensions": {
+        "identity": {
+          "score": 0.5,
+          "reasons": [
+            "named with a verified quote in a source"
+          ]
+        },
+        "transaction": {
+          "score": 0.62,
+          "reasons": [
+            "transaction quote passed source verification"
+          ]
+        },
+        "amount": {
+          "score": 0.75,
+          "status": "calculated-from-source"
+        },
+        "corroboration": {
+          "source_count": 1,
+          "independent_sources": false,
+          "source_urls": [
+            "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf"
+          ]
+        },
+        "method": "Heuristic indicators; not calibrated probabilities."
+      },
+      "earlier_events": [
+        {
+          "name_there": "Aditi C Bhanot",
+          "event": "FDC Limited buyback (Nov 2026)",
+          "link": "tendered_in_buyback",
+          "match": "same"
+        }
+      ],
+      "score": 0.6549,
+      "score_parts": {
+        "amount": {
+          "points": 0.3849,
+          "max": 0.5
+        },
+        "confidence": {
+          "points": 0.15,
+          "max": 0.3
+        },
+        "timing": {
+          "points": 0.12,
+          "max": 0.2
+        }
+      },
+      "brief": "Mrs. Aditi C Bhanot tendered shares in the FDC buyback dated 26 Nov 2026, with cash expected after this date. Gross amounts range from ₹7.2 cr at the entitlement low end up to ₹553.5 cr if all offered shares are accepted, subject to the ₹120.0 cr buyback size cap. Confidence is 0.5.",
+      "brief_by": "llm"
+    },
+    {
+      "name": "Mr. Nandan Mohan Chandavarkar",
+      "role": null,
+      "link": "tendered_in_buyback",
+      "shares_text": "11,000",
+      "amount_text": null,
+      "quote": "3. Mr. Nandan Mohan Chandavarkar 11,000 11,000",
+      "shares": 11000,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+          "page": 17,
+          "quote": "3. Mr. Nandan Mohan Chandavarkar 11,000 11,000"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": false,
+      "amount": {
+        "low": 71000.0,
+        "high": 5500000.0,
+        "kind": "estimate",
+        "working": "11,000 shares offered x ₹500 = ₹0.6 cr if every share were accepted; low end = entitlement '10 Equity Shares for every 773 Equity Shares held on the Record Date' (1.294%) x 11,000 = 142 shares x ₹500 = ₹0.71 lakh [ratio from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf] (gross, before tax and fees; acceptance above the entitlement depends on how many other holders tender)"
+      },
+      "timing": {
+        "status": "later",
+        "text": "Event dated 26 Nov 2026; cash expected after this [date from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]"
+      },
+      "confidence": 0.5,
+      "confidence_why": [
+        "named with a verified quote in a source"
+      ],
+      "confidence_dimensions": {
+        "identity": {
+          "score": 0.5,
+          "reasons": [
+            "named with a verified quote in a source"
+          ]
+        },
+        "transaction": {
+          "score": 0.62,
+          "reasons": [
+            "transaction quote passed source verification"
+          ]
+        },
+        "amount": {
+          "score": 0.75,
+          "status": "calculated-from-source"
+        },
+        "corroboration": {
+          "source_count": 1,
+          "independent_sources": false,
+          "source_urls": [
+            "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf"
+          ]
+        },
+        "method": "Heuristic indicators; not calibrated probabilities."
+      },
+      "earlier_events": [
+        {
+          "name_there": "Nandan Mohan Chandavarkar",
+          "event": "FDC Limited buyback (Nov 2026)",
+          "link": "tendered_in_buyback",
+          "match": "same"
+        }
+      ],
+      "score": 0.3716,
+      "score_parts": {
+        "amount": {
+          "points": 0.1016,
+          "max": 0.5
+        },
+        "confidence": {
+          "points": 0.15,
+          "max": 0.3
+        },
+        "timing": {
+          "points": 0.12,
+          "max": 0.2
+        }
+      },
+      "brief": "Mr. Nandan Mohan Chandavarkar tendered shares in the FDC buyback dated 26 Nov 2026, with cash expected after this date. Gross amounts range from ₹0.71 lakh at the entitlement low end up to ₹0.6 cr if all offered shares are accepted. Confidence is 0.5.",
+      "brief_by": "llm"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Ameya Family Discretionary Trust",
+      "role": null,
+      "link": "tendered_in_buyback",
+      "shares_text": "1,49,35,092",
+      "amount_text": null,
+      "quote": "5. Leo Advisors Private Limited (acting \nas Trustee of Ameya Family \nDiscretionary Trust) \n1,49,35,092 1,49,35,092",
+      "shares": 14935092,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+          "page": 17,
+          "quote": "5. Leo Advisors Private Limited (acting \nas Trustee of Ameya Family \nDiscretionary Trust) \n1,49,35,092 1,49,35,092"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 96604500.0,
+        "high": 1200000000.0,
+        "kind": "estimate",
+        "working": "14,935,092 shares offered x ₹500 = ₹746.8 cr if every share were accepted; capped at the whole buyback size of ₹120.0 cr [size from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]; low end = entitlement '10 Equity Shares for every 773 Equity Shares held on the Record Date' (1.294%) x 14,935,092 = 193,209 shares x ₹500 = ₹9.7 cr [ratio from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf] (gross, before tax and fees; acceptance above the entitlement depends on how many other holders tender)"
+      },
+      "timing": {
+        "status": "later",
+        "text": "Event dated 26 Nov 2026; cash expected after this [date from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "confidence_dimensions": {
+        "identity": {
+          "score": 0.4,
+          "reasons": [
+            "named with a verified quote in a source",
+            "this is an organisation, not a person; need the human behind it"
+          ]
+        },
+        "transaction": {
+          "score": 0.62,
+          "reasons": [
+            "transaction quote passed source verification"
+          ]
+        },
+        "amount": {
+          "score": 0.75,
+          "status": "calculated-from-source"
+        },
+        "corroboration": {
+          "source_count": 1,
+          "independent_sources": false,
+          "source_urls": [
+            "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf"
+          ]
+        },
+        "method": "Heuristic indicators; not calibrated probabilities."
+      },
+      "earlier_events": [
+        {
+          "name_there": "Ameya Family Discretionary Trust",
+          "event": "FDC Limited buyback (Nov 2026)",
+          "link": "tendered_in_buyback",
+          "match": "same"
+        }
+      ],
+      "score": 0.6249,
+      "score_parts": {
+        "amount": {
+          "points": 0.3849,
+          "max": 0.5
+        },
+        "confidence": {
+          "points": 0.12,
+          "max": 0.3
+        },
+        "timing": {
+          "points": 0.12,
+          "max": 0.2
+        }
+      }
+    },
+    {
+      "name": "Sandhya Mohan Chandavarkar Trust",
+      "role": null,
+      "link": "tendered_in_buyback",
+      "shares_text": "2,02,77,170",
+      "amount_text": null,
+      "quote": "6. Nandan Mohan Chandavarkar in the \ncapacity as Trustee of Sandhya Mohan \nChandavarkar Trust \n2,02,77,170 2,02,77,170",
+      "shares": 20277170,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+          "page": 17,
+          "quote": "6. Nandan Mohan Chandavarkar in the \ncapacity as Trustee of Sandhya Mohan \nChandavarkar Trust \n2,02,77,170 2,02,77,170"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 131158500.0,
+        "high": 1200000000.0,
+        "kind": "estimate",
+        "working": "20,277,170 shares offered x ₹500 = ₹1,013.9 cr if every share were accepted; capped at the whole buyback size of ₹120.0 cr [size from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]; low end = entitlement '10 Equity Shares for every 773 Equity Shares held on the Record Date' (1.294%) x 20,277,170 = 262,317 shares x ₹500 = ₹13.1 cr [ratio from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf] (gross, before tax and fees; acceptance above the entitlement depends on how many other holders tender)"
+      },
+      "timing": {
+        "status": "later",
+        "text": "Event dated 26 Nov 2026; cash expected after this [date from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "confidence_dimensions": {
+        "identity": {
+          "score": 0.4,
+          "reasons": [
+            "named with a verified quote in a source",
+            "this is an organisation, not a person; need the human behind it"
+          ]
+        },
+        "transaction": {
+          "score": 0.62,
+          "reasons": [
+            "transaction quote passed source verification"
+          ]
+        },
+        "amount": {
+          "score": 0.75,
+          "status": "calculated-from-source"
+        },
+        "corroboration": {
+          "source_count": 1,
+          "independent_sources": false,
+          "source_urls": [
+            "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf"
+          ]
+        },
+        "method": "Heuristic indicators; not calibrated probabilities."
+      },
+      "earlier_events": [
+        {
+          "name_there": "Sandhya Mohan Chandavarkar Trust",
+          "event": "FDC Limited buyback (Nov 2026)",
+          "link": "tendered_in_buyback",
+          "match": "same"
+        }
+      ],
+      "score": 0.6249,
+      "score_parts": {
+        "amount": {
+          "points": 0.3849,
+          "max": 0.5
+        },
+        "confidence": {
+          "points": 0.12,
+          "max": 0.3
+        },
+        "timing": {
+          "points": 0.12,
+          "max": 0.2
+        }
+      }
+    },
+    {
+      "name": "Mohan Anand Chandavarkar Trust",
+      "role": null,
+      "link": "tendered_in_buyback",
+      "shares_text": "2,02,77,171",
+      "amount_text": null,
+      "quote": "7. Nandan Mohan Chandavarkar in the \ncapacity as Trustee of Mohan Anand \nChandavarkar Trust \n2,02,77,171 2,02,77,171",
+      "shares": 20277171,
+      "evidence": [
+        {
+          "url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+          "page": 17,
+          "quote": "7. Nandan Mohan Chandavarkar in the \ncapacity as Trustee of Mohan Anand \nChandavarkar Trust \n2,02,77,171 2,02,77,171"
+        }
+      ],
+      "aliases": [],
+      "possible_matches": [],
+      "is_org": true,
+      "amount": {
+        "low": 131158500.0,
+        "high": 1200000000.0,
+        "kind": "estimate",
+        "working": "20,277,171 shares offered x ₹500 = ₹1,013.9 cr if every share were accepted; capped at the whole buyback size of ₹120.0 cr [size from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]; low end = entitlement '10 Equity Shares for every 773 Equity Shares held on the Record Date' (1.294%) x 20,277,171 = 262,317 shares x ₹500 = ₹13.1 cr [ratio from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf] (gross, before tax and fees; acceptance above the entitlement depends on how many other holders tender)"
+      },
+      "timing": {
+        "status": "later",
+        "text": "Event dated 26 Nov 2026; cash expected after this [date from https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]"
+      },
+      "confidence": 0.4,
+      "confidence_why": [
+        "named with a verified quote in a source",
+        "this is an organisation, not a person; need the human behind it"
+      ],
+      "confidence_dimensions": {
+        "identity": {
+          "score": 0.4,
+          "reasons": [
+            "named with a verified quote in a source",
+            "this is an organisation, not a person; need the human behind it"
+          ]
+        },
+        "transaction": {
+          "score": 0.62,
+          "reasons": [
+            "transaction quote passed source verification"
+          ]
+        },
+        "amount": {
+          "score": 0.75,
+          "status": "calculated-from-source"
+        },
+        "corroboration": {
+          "source_count": 1,
+          "independent_sources": false,
+          "source_urls": [
+            "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf"
+          ]
+        },
+        "method": "Heuristic indicators; not calibrated probabilities."
+      },
+      "earlier_events": [
+        {
+          "name_there": "Mohan Anand Chandavarkar Trust",
+          "event": "FDC Limited buyback (Nov 2026)",
+          "link": "tendered_in_buyback",
+          "match": "same"
+        }
+      ],
+      "score": 0.6249,
+      "score_parts": {
+        "amount": {
+          "points": 0.3849,
+          "max": 0.5
+        },
+        "confidence": {
+          "points": 0.12,
+          "max": 0.3
+        },
+        "timing": {
+          "points": 0.12,
+          "max": 0.2
+        }
+      }
+    }
+  ],
+  "notes": [
+    "Mr. Ameya Ashok Chandavarkar (person kept, field removed): role 'Promotor' not in quote, dropped [https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]",
+    "Ms. Nomita Ramdas Chandavarkar (person kept, field removed): role 'Promotor' not in quote, dropped [https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]",
+    "Mr. Nandan Mohan Chandavarkar (person kept, field removed): role 'Promotor' not in quote, dropped [https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]",
+    "Mrs. Aditi C Bhanot (person kept, field removed): role 'Promotor' not in quote, dropped [https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf]"
+  ],
+  "cost": {
+    "calls": 3,
+    "cached_calls": 0,
+    "cost_usd": 0.0107,
+    "seconds": 16.6
+  },
+  "per_person": [
+    0.010684,
+    {}
+  ],
+  "wall_seconds": 16.8,
+  "analysis_status": "complete",
+  "funnel": {
+    "mentions_verified": 7,
+    "mentions_rejected": 0,
+    "fields_removed": 4,
+    "entities": 7,
+    "people": 4,
+    "institutions": 3
+  },
+  "run_id": "7dd71d4a",
+  "source_counts": {
+    "attempted": 2,
+    "succeeded": 2,
+    "failed": 0
+  },
+  "benchmark": {
+    "name": "FDC Limited buyback - promoters intending to tender",
+    "source_url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+    "checked_against": "Letter of Offer filed with SEBI on 16 Nov 2026, section 7.1 table of promoters and promoter group intending to tender (page 17). Rows add up to the stated aggregate of 11,34,10,433 shares. Trust rows are keyed by the trust, not the trustee (Leo Advisors Private Limited, Nandan Mohan Chandavarkar).",
+    "recall": {
+      "found": 7,
+      "expected": 7,
+      "rate": 1.0
+    },
+    "precision": {
+      "correct": 7,
+      "claimed": 7,
+      "rate": 1.0,
+      "false_positives": []
+    },
+    "individuals": {
+      "found": 4,
+      "expected": 4,
+      "missed": []
+    },
+    "institutions": {
+      "found": 3,
+      "expected": 3,
+      "missed": []
+    },
+    "routing": {
+      "correct": 7,
+      "checked": 7,
+      "misrouted": []
+    },
+    "shares": {
+      "exact": 7,
+      "checked": 7,
+      "mismatches": []
+    },
+    "other_leads": []
+  }
+}

@@ -73,9 +73,23 @@ def confidence_dimensions(person, n_sources):
     }
 
 
-def rank_score(person):
+WEIGHTS = {"amount": 0.5, "confidence": 0.3, "timing": 0.2}
+
+
+def _parts(person):
     amt = person["amount"]["high"] or 0
     # log scale so a 500 cr seller doesn't totally drown a 5 cr seller
     amount_part = min(math.log10(amt / 1e6 + 1) / 4, 1.0) if amt else 0.0
     timing_part = TIMING_SCORE[person["timing"]["status"]]
-    return round(0.5 * amount_part + 0.3 * person["confidence"] + 0.2 * timing_part, 4)
+    return {"amount": WEIGHTS["amount"] * amount_part,
+            "confidence": WEIGHTS["confidence"] * person["confidence"],
+            "timing": WEIGHTS["timing"] * timing_part}
+
+
+def rank_score(person):
+    return round(sum(_parts(person).values()), 4)
+
+
+def rank_parts(person):
+    """The score split into its three weighted parts, so the UI can explain a rank."""
+    return {k: {"points": round(v, 4), "max": WEIGHTS[k]} for k, v in _parts(person).items()}

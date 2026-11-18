@@ -31,6 +31,37 @@ EVIDENCE_CASES = [
         },
         "keep": True,
     },
+    {
+        "case": "buyback table row under an intention-to-tender heading is supported",
+        "source": (
+            "The Promoters have expressed their intention to participate in the Buyback. The details of "
+            "the Promoters intending to participate in the Buyback, along with the maximum number of "
+            "Equity Shares proposed to be tendered by each of them, are set out below: "
+            "1. Mr. Ameya Ashok Chandavarkar 99,23,930 99,23,930"
+        ),
+        "person": {
+            "name": "Ameya Ashok Chandavarkar",
+            "link": "tendered_in_buyback",
+            "shares_text": "99,23,930",
+            "quote": "1. Mr. Ameya Ashok Chandavarkar 99,23,930 99,23,930",
+        },
+        "keep": True,
+    },
+    {
+        "case": "promoter named near a buyback but holding no shares is not a lead",
+        "source": (
+            "The Board noted the intention of Promoters for their participation in the Buyback. "
+            "Mr. Mohan A Chandavarkar, Chairman & Managing Director, is authorised to give effect to it."
+        ),
+        "person": {
+            "name": "Mohan A Chandavarkar",
+            "role": "Chairman & Managing Director",
+            "link": "tendered_in_buyback",
+            "quote": "The Board noted the intention of Promoters for their participation in the Buyback. "
+            "Mr. Mohan A Chandavarkar, Chairman & Managing Director, is authorised to give effect to it.",
+        },
+        "keep": False,
+    },
 ]
 
 

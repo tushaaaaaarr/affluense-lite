@@ -1,0 +1,17 @@
+{
+  "name": "FDC Limited buyback - promoters intending to tender",
+  "source_url": "https://www.sebi.gov.in/sebi_data/commondocs/nov-2026/FDC%20Limited%20LOA_p.pdf",
+  "checked_against": "Letter of Offer filed with SEBI on 16 Nov 2026, section 7.1 table of promoters and promoter group intending to tender (page 17). Rows add up to the stated aggregate of 11,34,10,433 shares. Trust rows are keyed by the trust, not the trustee (Leo Advisors Private Limited, Nandan Mohan Chandavarkar).",
+  "link": "tendered_in_buyback",
+  "individuals": [
+    {"name": "Ameya Ashok Chandavarkar", "shares": 9923930},
+    {"name": "Nomita Ramdas Chandavarkar", "shares": 36916689},
+    {"name": "Nandan Mohan Chandavarkar", "shares": 11000},
+    {"name": "Aditi C Bhanot", "shares": 11069381}
+  ],
+  "institutions": [
+    {"name": "Ameya Family Discretionary Trust", "shares": 14935092},
+    {"name": "Sandhya Mohan Chandavarkar Trust", "shares": 20277170},
+    {"name": "Mohan Anand Chandavarkar Trust", "shares": 20277171}
+  ]
+}

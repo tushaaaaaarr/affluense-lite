@@ -63,3 +63,54 @@ cf2fc2f0,2026-11-18T14:54:57,RBA_IPO,extract,,gemini-3.5-flash-lite,2258,302,0.0
 2b8657f9,2026-11-18T15:15:59,Info Edge acquisition of Coding Ninjas founders’ stake (Jul 2026),extract,,gemini-3.5-flash-lite,5505,149,0.002024,7.13,False
 4bfb1a1e,2026-11-18T15:48:59,SEDEMAC_IPO,extract,,gemini-3.5-flash-lite,12906,2916,0.011162,13.83,False
 4bfb1a1e,2026-11-18T15:49:06,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,1383,758,0.00231,6.27,False
+0d35ab0b,2026-11-18T16:24:32,SEDEMAC_IPO,extract,,gemini-3.5-flash-lite,12801,3969,0.013763,10.96,False
+0d35ab0b,2026-11-18T16:24:35,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,1316,628,0.001965,1.86,False
+0d35ab0b,2026-11-18T16:24:36,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,601,433,0.001263,1.82,False
+e6b8b5d1,2026-11-18T16:36:49,SEDEMAC_IPO,extract,,gemini-3.5-flash-lite,12801,3969,0.0,0.0,True
+e6b8b5d1,2026-11-18T16:36:50,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,1316,628,0.0,0.0,True
+e6b8b5d1,2026-11-18T16:36:50,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,601,433,0.0,0.0,True
+e975dffc,2026-11-18T16:39:05,SEDEMAC_IPO,extract,,gemini-3.5-flash-lite,12801,3969,0.0,0.0,True
+e975dffc,2026-11-18T16:39:05,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,1316,628,0.0,0.0,True
+e975dffc,2026-11-18T16:39:05,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,601,433,0.0,0.0,True
+a7721cc8,2026-11-18T16:43:14,JIO_IPO,extract,,gemini-3.5-flash-lite,12901,61,0.004023,2.16,False
+6fe8cb0c,2026-11-18T16:44:11,SEDEMAC_IPO,extract,,gemini-3.5-flash-lite,12801,3969,0.0,0.0,True
+6fe8cb0c,2026-11-18T16:44:11,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,1316,628,0.0,0.0,True
+6fe8cb0c,2026-11-18T16:44:11,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,601,433,0.0,0.0,True
+fd06ccd2,2026-11-18T17:16:16,BrowserStack ESOP,extract,,gemini-3.5-flash-lite,1438,268,0.001101,7.6,False
+48743b32,2026-11-18T17:20:24,SEDEMAC_IPO,extract,,gemini-3.5-flash-lite,12801,4530,0.015165,9.29,False
+48743b32,2026-11-18T17:20:27,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,1316,668,0.002065,2.09,False
+48743b32,2026-11-18T17:20:28,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,452,334,0.000971,1.44,False
+dd08ffc5,2026-11-18T17:31:20,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,10445,128,0.003453,4.19,False
+dd08ffc5,2026-11-18T17:31:25,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,7738,81,0.002524,2.11,False
+439c036e,2026-11-18T17:35:36,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,10638,524,0.004501,4.1,False
+439c036e,2026-11-18T17:35:38,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,7931,357,0.003272,1.66,False
+439c036e,2026-11-18T17:35:39,FDC Limited buyback (Nov 2026),brief,,gemini-3.5-flash-lite,230,88,0.000289,0.76,False
+440f4206,2026-11-18T17:37:36,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,11695,982,0.005964,6.77,False
+440f4206,2026-11-18T17:37:36,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,7931,357,0.0,0.0,True
+440f4206,2026-11-18T17:37:38,FDC Limited buyback (Nov 2026),brief,,gemini-3.5-flash-lite,1434,418,0.001475,1.32,False
+ec345edd,2026-11-18T17:42:50,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,11757,999,0.006025,4.8,False
+ec345edd,2026-11-18T17:42:52,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,7993,398,0.003393,1.64,False
+ec345edd,2026-11-18T17:42:54,FDC Limited buyback (Nov 2026),brief,,gemini-3.5-flash-lite,1545,468,0.001633,1.78,False
+caaad62a,2026-11-18T17:43:47,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,11757,999,0.0,0.0,True
+caaad62a,2026-11-18T17:43:47,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,7993,398,0.0,0.0,True
+caaad62a,2026-11-18T17:43:52,FDC Limited buyback (Nov 2026),brief,,gemini-3.5-flash-lite,1456,361,0.001339,4.59,False
+08449934,2026-11-18T17:44:33,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,2872,209,0.001384,3.26,False
+08449934,2026-11-18T17:44:42,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,13066,4424,0.01498,8.92,False
+08449934,2026-11-18T17:44:45,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3.5-flash-lite,1784,901,0.002788,2.45,False
+b8498f61,2026-11-18T17:46:18,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,2872,209,0.0,0.0,True
+b8498f61,2026-11-18T17:46:18,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,13066,4424,0.0,0.0,True
+b8498f61,2026-11-18T17:46:26,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3.5-flash-lite,1846,856,0.002694,7.69,False
+b8498f61,2026-11-18T17:46:29,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3.5-flash-lite,1296,630,0.001964,2.71,False
+8da17fa1,2026-11-18T17:46:30,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,11757,999,0.0,0.0,True
+8da17fa1,2026-11-18T17:46:30,FDC Limited buyback (Nov 2026),extract,,gemini-3.5-flash-lite,7993,398,0.0,0.0,True
+8da17fa1,2026-11-18T17:46:30,FDC Limited buyback (Nov 2026),brief,,gemini-3.5-flash-lite,1456,361,0.0,0.0,True
+7dd71d4a,2026-11-18T17:49:40,FDC,extract,,gemini-3.5-flash-lite,11746,1088,0.006244,5.62,False
+7dd71d4a,2026-11-18T17:49:45,FDC,extract,,gemini-3.5-flash-lite,7982,223,0.002952,4.9,False
+7dd71d4a,2026-11-18T17:49:51,FDC,brief,,gemini-3.5-flash-lite,1384,429,0.001488,6.06,False
+207e7684,2026-11-18T17:50:56,SEDEMAC_IPO,extract,,gemini-3.5-flash-lite,13056,3867,0.013584,18.59,False
+207e7684,2026-11-18T17:51:10,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,830,709,0.002021,13.21,False
+207e7684,2026-11-18T17:51:23,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,650,514,0.00148,13.83,False
+a50af119,2026-11-18T17:53:16,SEDEMAC_IPO,extract,,gemini-3.5-flash-lite,2862,179,0.001306,7.91,False
+a50af119,2026-11-18T17:53:17,SEDEMAC_IPO,extract,,gemini-3.5-flash-lite,13056,3867,0.0,0.0,True
+a50af119,2026-11-18T17:53:35,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,1746,771,0.002451,18.43,False
+a50af119,2026-11-18T17:53:46,SEDEMAC_IPO,brief,,gemini-3.5-flash-lite,1395,670,0.002093,10.92,False

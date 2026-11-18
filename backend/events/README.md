@@ -1,6 +1,7 @@
 Active event files are:
 
 - `sedemac_ipo.json` — IPO with named selling shareholders.
+- `fdc_buyback.json` — tender-offer buyback; the SEBI Letter of Offer names the promoters who intend to tender, with share counts, the buyback price, size, and entitlement ratio.
 - `browserstack_esop_buyback.json` — company announcement of a buyback benefiting employees and early investors; individuals are not named.
 - `coding_ninjas_acquisition.json` — Info Edge's primary filing plus an accessible report on its acquisition of founder-held shares; individual founders are not named in the filing.
 - `jio_platforms_ipo.json` — fresh-issue IPO used to test a correct no-seller result.
