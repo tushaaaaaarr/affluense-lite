@@ -142,6 +142,26 @@ def test_role_not_in_quote_is_dropped():
     assert clean["role"] is None and problems
 
 
+def test_buyback_spokesperson_quote_is_not_seller_evidence():
+    source = (
+        "The $125 million buyback will benefit employees and early investors. "
+        "\"The people who joined us early on are the reason we are here today,\" "
+        "said Ritesh Arora, Co-founder and CEO of BrowserStack."
+    )
+    person = {
+        "name": "Ritesh Arora",
+        "role": "Co-founder",
+        "link": "tendered_in_buyback",
+        "quote": "\"The people who joined us early on are the reason we are here today,\" "
+        "said Ritesh Arora, Co-founder and CEO of BrowserStack.",
+    }
+
+    clean, problems = verify.check_person(person, source)
+
+    assert clean is None
+    assert "buyback participation" in problems[0]
+
+
 def test_unverified_date_is_dropped():
     ev = verify.check_event_price({"date": "05 March 2026", "date_quote": "opens on 4 March 2026"},
                                   "The issue opens on 4 March 2026.")

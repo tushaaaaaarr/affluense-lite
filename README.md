@@ -10,15 +10,16 @@ and a short RM brief.
 pip install -r backend/requirements.txt
 python -m pytest -q                     # offline tests with a fake model, no key needed
 
-# put your key and a private log token in backend/.env (never commit it)
+# put your key and private log sign-in credentials in backend/.env (never commit it)
 copy backend/.env.example backend/.env  # then paste your key into backend/.env
 # backend/.env.example is set up for Google Gemini (free tier works). For Anthropic, see the
-# commented lines in it. Set LOGS_ACCESS_TOKEN to a private random value too.
-# Generate one with: python -c "import secrets; print(secrets.token_urlsafe(32))"
+# commented lines in it. Replace LOGS_USERNAME and LOGS_PASSWORD with private values too.
 # Values already set in your shell override .env.
 
 # a saved event
 python backend/run.py backend/events/sedemac_ipo.json
+python backend/run.py backend/events/browserstack_esop_buyback.json
+python backend/run.py backend/events/coding_ninjas_acquisition.json
 
 # a brand-new event, live (this is what you do on the call)
 python backend/run.py --name "Some Co buyback" --url https://link1 --url https://link2
@@ -48,16 +49,18 @@ CSV logs can be cleared when the service restarts or redeploys.
 4. For local development, install `backend/requirements.txt`, run
     `uvicorn app:app --app-dir backend --reload` from the repository root, and run `npm install` then
     `npm run dev` from `frontend/`. Copy `frontend/.env.example` to `frontend/.env` if needed.
-   Set a private `LOGS_ACCESS_TOKEN` in Render's environment and in local `backend/.env`. The UI
-   asks for this token before showing logs; do not put it in `frontend/.env` or commit it.
+    Set private `LOGS_USERNAME` and `LOGS_PASSWORD` values in Render's environment and local
+    `backend/.env`. The UI uses HTTP Basic sign-in for logs; keep these values out of the frontend
+    environment and never commit them.
 
-The API accepts public HTTP(S) source links only; local files remain available through the CLI.
-It exposes `/api/health` and `POST /api/events/analyze`.
+The API accepts public HTTP(S) source links and optional uploaded PDF copies for blocked sources.
+It exposes `/api/health`, `POST /api/events/analyze`, and `POST /api/events/analyze-upload`.
 
 ### Example UI inputs
 
 Open the frontend and paste the event name into **Event name** and the URLs into **Source links**,
-one URL per line. Use public pages or PDFs; the web UI cannot read local file paths.
+one URL per line. Use public pages or PDFs. For blocked pages, attach a saved PDF or HTML copy with
+its public citation URL.
 
 **SEDEMAC IPO**
 ```text
@@ -74,29 +77,47 @@ Source links:
 https://www.sebi.gov.in/sebi_data/attachdocs/oct-2026/1792045029108.pdf
 ```
 
+**BrowserStack ESOP buyback** (official company announcement; recipients are not individually named)
+```text
+Event name: BrowserStack ESOP and share buyback (Jan 2026)
+Source links:
+https://www.browserstack.com/press/browserstack-announces-125-million-esop-and-share-buyback-program-creating-wealth-for-over-500-employees
+```
+
+**Info Edge / Coding Ninjas acquisition** (founder-held stake purchase)
+```text
+Event name: Info Edge acquisition of Coding Ninjas founder stake (Jul 2026)
+Source links:
+https://www.infoedge.in/announcements/SEIntimationCodingNinjaandB88726.pdf
+https://entrackr.com/news/info-edge-takes-full-control-of-coding-ninjas-after-acquiring-remaining-45-stake-for-rs-399-cr-12140095
+```
+The official filing states that 45.36% was acquired from Coding Ninjas' founders for about ₹39.91 crore; it does not name the individual sellers, so the system should not invent a person-level split.
+
 ### View and download cost logs
 
-Open **Run and cost logs** below the results, enter the same `LOGS_ACCESS_TOKEN` configured for the
+Open **Run and cost logs**, sign in with the `LOGS_USERNAME` and `LOGS_PASSWORD` configured for the
 backend, and load either **Run history** (`runs.csv`) or **Model calls** (`cost_log.csv`). The UI
-shows the latest 100 rows and downloads the complete CSV. Access is token-protected because call
+shows the latest 100 rows and downloads the complete CSV. Access is password-protected because call
 logs may contain names. A fresh deployment shows empty logs until it has processed an event.
 
 **What the real runs cost** (model `gemini-3.5-flash-lite`, paid-tier prices; see `backend/outputs/runs.csv`):
-SEDEMAC IPO $0.021 (582-page prospectus, 18 people, 4 model calls, 20 s) · RBA acquisition
-$0.0014 · Astrotalk buyback $0.0013 · Jio IPO $0.0041 · every second run $0.00.
+SEDEMAC IPO $0.021 (582-page prospectus, 18 people, 4 model calls, 20 s) · Jio IPO $0.0041.
+BrowserStack first run $0.0013 (2 calls; cached rerun $0) · Info Edge/Coding Ninjas $0.0027 (2 calls).
+Older Astrotalk and RBA cost rows remain in the CSV history; their report files are no longer in the active outputs.
 The brief's cap is $2 per event.
 
 **Free-tier limit:** Gemini's free tier allows about 20 requests per model per day. One event
 uses 1-4, because call notes are written 10 people per request. If the quota runs out, the run
 stops calling the model, uses template notes, and says so in the run notes.
 
-**If a site blocks the download** (NSE/BSE often do), open it in a browser, save the PDF, and
-point the event at the file while still citing the public link:
+**If a site blocks the download** (NSE/BSE often do), add the public link to **Source links**, expand
+**Source blocked? Attach a saved copy**, repeat that same public URL as the citation URL, and choose
+the PDF or HTML page saved from your browser. Uploads are limited to 25 MB and are deleted after
+analysis. The old RBA and Astrotalk saved source copies remain in `backend/events/saved/` if you need to rerun those legacy inputs.
+The CLI also accepts this source format:
 ```json
 {"name": "X Ltd IPO", "sources": [{"url": "https://public/link/rhp.pdf", "file": "C:/saved/rhp.pdf"}]}
 ```
-The RBA and Astrotalk events work this way; their saved copies are in `backend/events/saved/`
-(included in the submission zip, kept out of Git).
 Behind a company proxy? `truststore` (in requirements) makes Python use the Windows
 certificate store, so HTTPS works without turning off verification.
 

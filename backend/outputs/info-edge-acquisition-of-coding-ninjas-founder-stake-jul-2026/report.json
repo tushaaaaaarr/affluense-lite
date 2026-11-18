@@ -1,0 +1,34 @@
+{
+  "event": "Info Edge acquisition of Coding Ninjas founder stake (Jul 2026)",
+  "event_info": {
+    "price_low": 5340.23,
+    "price_high": 5340.23,
+    "price_quote": "at a price of Rs. 5340.23 (Rupees Five Thousand Three Hundred and Forty Point Two Three only) per share",
+    "price_url": "https://www.infoedge.in/announcements/SEIntimationCodingNinjaandB88726.pdf",
+    "date": "July 6, 2026",
+    "date_quote": "Date: July 6, 2026",
+    "date_url": "https://www.infoedge.in/announcements/SEIntimationCodingNinjaandB88726.pdf",
+    "company": "Info Edge (India) Limited",
+    "kind": "acquisition"
+  },
+  "people": [],
+  "institutions": [],
+  "notes": [],
+  "cost": {
+    "calls": 2,
+    "cached_calls": 0,
+    "cost_usd": 0.0027,
+    "seconds": 5.0
+  },
+  "per_person": [
+    0.0026839999999999998,
+    {}
+  ],
+  "wall_seconds": 12.2,
+  "analysis_status": "no_leads",
+  "source_counts": {
+    "attempted": 2,
+    "succeeded": 2,
+    "failed": 0
+  }
+}

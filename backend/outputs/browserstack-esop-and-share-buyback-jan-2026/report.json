@@ -1,0 +1,32 @@
+{
+  "event": "BrowserStack ESOP and share buyback (Jan 2026)",
+  "event_info": {
+    "date": "January 12, 2026",
+    "date_quote": "DUBLIN – January 12, 2026 –",
+    "date_url": "https://www.browserstack.com/press/browserstack-announces-125-million-esop-and-share-buyback-program-creating-wealth-for-over-500-employees",
+    "company": "BrowserStack",
+    "kind": "ESOP and share buyback"
+  },
+  "people": [],
+  "institutions": [],
+  "notes": [
+    "Ritesh Arora: quote does not explicitly connect person to buyback participation [https://www.browserstack.com/press/browserstack-announces-125-million-esop-and-share-buyback-program-creating-wealth-for-over-500-employees]"
+  ],
+  "cost": {
+    "calls": 1,
+    "cached_calls": 1,
+    "cost_usd": 0.0,
+    "seconds": 0.0
+  },
+  "per_person": [
+    0.0,
+    {}
+  ],
+  "wall_seconds": 0.0,
+  "analysis_status": "no_leads",
+  "source_counts": {
+    "attempted": 1,
+    "succeeded": 1,
+    "failed": 0
+  }
+}

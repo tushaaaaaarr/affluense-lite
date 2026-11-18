@@ -50,3 +50,14 @@ d4767c9b,2026-11-15T16:13:23,Jio Platforms IPO (Oct 2026),extract,,gemini-3.5-fl
 9da0d8bf,2026-11-18T14:16:27,SEDEMAC IPO 18-11,extract,,gemini-3.5-flash-lite,12911,4083,0.014081,13.61,False
 9da0d8bf,2026-11-18T14:16:30,SEDEMAC IPO 18-11,brief,,gemini-3.5-flash-lite,2401,895,0.002958,2.45,False
 9da0d8bf,2026-11-18T14:16:32,SEDEMAC IPO 18-11,brief,,gemini-3.5-flash-lite,1407,627,0.00199,1.77,False
+cf2fc2f0,2026-11-18T14:54:57,RBA_IPO,extract,,gemini-3.5-flash-lite,2258,302,0.001432,4.56,False
+103b5144,2026-11-18T14:56:40,RBA,extract,,gemini-3.5-flash-lite,11543,388,0.004433,1.69,False
+948713c6,2026-11-18T14:58:28,AStrotalk,extract,,gemini-3.5-flash-lite,818,81,0.000448,1.45,False
+9207e399,2026-11-18T15:10:09,BrowserStack ESOP and share buyback (Jan 2026),extract,,gemini-3.5-flash-lite,1450,221,0.000988,4.96,False
+9207e399,2026-11-18T15:10:11,BrowserStack ESOP and share buyback (Jan 2026),brief,,gemini-3.5-flash-lite,237,97,0.000314,2.02,False
+32f4afab,2026-11-18T15:10:20,Info Edge acquisition of Coding Ninjas founder stake (Jul 2026),extract,,gemini-3.5-flash-lite,5504,127,0.001969,3.1,False
+32f4afab,2026-11-18T15:10:25,Info Edge acquisition of Coding Ninjas founder stake (Jul 2026),extract,,gemini-3.5-flash-lite,1510,105,0.000715,1.87,False
+0eb0f9fc,2026-11-18T15:11:42,BrowserStack ESOP and share buyback (Jan 2026),extract,,gemini-3.5-flash-lite,1450,221,0.0,0.0,True
+189bf7d3,2026-11-18T15:14:48,BrowserStack ESOP and Share Buyback Program (Jan 2026),extract,,gemini-3.5-flash-lite,1451,216,0.000975,7.79,False
+189bf7d3,2026-11-18T15:14:57,BrowserStack ESOP and Share Buyback Program (Jan 2026),brief,,gemini-3.5-flash-lite,176,78,0.000248,8.46,False
+2b8657f9,2026-11-18T15:15:59,Info Edge acquisition of Coding Ninjas founders’ stake (Jul 2026),extract,,gemini-3.5-flash-lite,5505,149,0.002024,7.13,False

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as XLSX from "xlsx";
-import { ArrowDownRight, ArrowUpRight, CircleAlert, Download, ExternalLink, FileSpreadsheet, FileText, KeyRound, LoaderCircle, Search, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, CircleAlert, Download, ExternalLink, FileSpreadsheet, FileText, FileUp, KeyRound, LoaderCircle, Search, ShieldCheck, Sparkles } from "lucide-react";
 
 const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:8000").replace(/\/$/, "");
 
@@ -27,6 +27,12 @@ function reasonLabel(link) {
     other: "Other transaction",
   };
   return labels[link] || "Transaction not classified";
+}
+
+function basicAuthHeader(username, password) {
+  const bytes = new TextEncoder().encode(`${username}:${password}`);
+  const binary = Array.from(bytes, (byte) => String.fromCharCode(byte)).join("");
+  return `Basic ${btoa(binary)}`;
 }
 
 function downloadWorkbook(result) {
@@ -98,12 +104,16 @@ function App() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [logsOpen, setLogsOpen] = useState(false);
-  const [logsToken, setLogsToken] = useState("");
+  const [logsUsername, setLogsUsername] = useState("");
+  const [logsPassword, setLogsPassword] = useState("");
+  const [logsAuthenticated, setLogsAuthenticated] = useState(false);
   const [logKind, setLogKind] = useState("runs");
   const [logData, setLogData] = useState(null);
   const [logsError, setLogsError] = useState("");
   const [logsLoading, setLogsLoading] = useState(false);
   const [downloadLoading, setDownloadLoading] = useState(false);
+  const [sourceFile, setSourceFile] = useState(null);
+  const [sourceFileUrl, setSourceFileUrl] = useState("");
 
   async function analyze(event) {
     event.preventDefault();
@@ -114,13 +124,32 @@ function App() {
       setError("Add an event name and at least one source link.");
       return;
     }
+    if (sourceFile && (!sourceFileUrl.trim() || !urls.includes(sourceFileUrl.trim()))) {
+      setError("Add the uploaded source's public URL to Source links and enter the same URL below the upload field.");
+      return;
+    }
+    if (sourceFile && (sourceFile.size > 25 * 1024 * 1024 || !/\.(pdf|html?)$/i.test(sourceFile.name))) {
+      setError("Upload a PDF or HTML page smaller than 25 MB.");
+      return;
+    }
     setLoading(true);
     try {
-      const response = await fetch(`${API_URL}/api/events/analyze`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), urls, follow_web: followWeb }),
-      });
+      let response;
+      if (sourceFile) {
+        const formData = new FormData();
+        formData.append("name", name.trim());
+        formData.append("urls", urls.join("\n"));
+        formData.append("source_file_url", sourceFileUrl.trim());
+        formData.append("source_file", sourceFile);
+        formData.append("follow_web", String(followWeb));
+        response = await fetch(`${API_URL}/api/events/analyze-upload`, { method: "POST", body: formData });
+      } else {
+        response = await fetch(`${API_URL}/api/events/analyze`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name: name.trim(), urls, follow_web: followWeb }),
+        });
+      }
       const body = await response.json();
       if (!response.ok) throw new Error(body.detail || "The analysis could not be completed.");
       setResult(body);
@@ -134,18 +163,24 @@ function App() {
   }
 
   async function loadLogs(kind = logKind) {
+    if (!logsUsername || !logsPassword) {
+      setLogsError("Enter the log username and password configured on the backend.");
+      return;
+    }
     setLogKind(kind);
     setLogsError("");
     setLogsLoading(true);
     try {
       const response = await fetch(`${API_URL}/api/logs/${kind}`, {
-        headers: { "X-Logs-Token": logsToken },
+        headers: { Authorization: basicAuthHeader(logsUsername, logsPassword) },
       });
       const body = await response.json();
       if (!response.ok) throw new Error(body.detail || "Could not load the log.");
       setLogData(body);
+      setLogsAuthenticated(true);
     } catch (reason) {
       setLogData(null);
+      setLogsAuthenticated(false);
       setLogsError(reason.message === "Failed to fetch"
         ? "Can't reach the analysis API. Check its URL and that the backend is awake."
         : reason.message);
@@ -155,11 +190,15 @@ function App() {
   }
 
   async function downloadLogCsv() {
+    if (!logsUsername || !logsPassword) {
+      setLogsError("Enter the log username and password configured on the backend.");
+      return;
+    }
     setLogsError("");
     setDownloadLoading(true);
     try {
       const response = await fetch(`${API_URL}/api/logs/csv/${logKind}`, {
-        headers: { "X-Logs-Token": logsToken },
+        headers: { Authorization: basicAuthHeader(logsUsername, logsPassword) },
       });
       if (!response.ok) {
         const body = await response.json();
@@ -203,7 +242,7 @@ function App() {
           <span>affluense<span className="wordmark-lite"> / lite</span></span>
         </a>
         <div className="topbar-status"><span className="status-dot" /> PRIVATE BETA <span className="topbar-divider" /> INDIA</div>
-        <a className="docs-link" href="https://github.com" target="_blank" rel="noreferrer">Project <ExternalLink size={14} /></a>
+        <a className="docs-link" href="https://github.com/tushaaaaaarr/affluense-lite" target="_blank" rel="noreferrer">Project <ExternalLink size={14} /></a>
       </header>
 
       <section className="intro" id="top">
@@ -228,6 +267,14 @@ function App() {
             <label htmlFor="source-links">Source links <span className="label-note">UP TO 8</span></label>
             <textarea id="source-links" value={sourceText} onChange={(event) => setSourceText(event.target.value)} placeholder={"Paste public links, one per line\nhttps://..."} rows={5} />
             <div className="field-hint"><ShieldCheck size={14} /> Evidence is checked against the source text.</div>
+            <details className="upload-details">
+              <summary><FileUp size={14} /> Source blocked? Attach a saved copy</summary>
+              <label htmlFor="source-file-url">Public citation URL</label>
+              <input id="source-file-url" type="url" value={sourceFileUrl} onChange={(event) => setSourceFileUrl(event.target.value)} placeholder="Use the same URL listed above" />
+              <label htmlFor="source-file">Saved PDF or HTML copy</label>
+              <input id="source-file" type="file" accept="application/pdf,.pdf,text/html,.html,.htm" onChange={(event) => setSourceFile(event.target.files?.[0] || null)} />
+              <small>{sourceFile ? `${sourceFile.name} selected` : "PDF or HTML, up to 25 MB. Its public URL must also be listed above."}</small>
+            </details>
 
             <label className="toggle-row" htmlFor="follow-web">
               <span className="toggle-copy"><strong>Search earlier deals</strong><small>Optional web search; may use more model calls.</small></span>
@@ -301,9 +348,9 @@ function App() {
       <section className="logs-section" aria-labelledby="logs-heading">
         <div className="logs-heading"><div><div className="panel-kicker">03 <span> / </span> OPERATIONS</div><h2 id="logs-heading">Run and cost logs</h2></div><p>Review model calls, cached runs, token counts, and per-person cost records.</p></div>
         <div className="logs-access">
-          <label htmlFor="logs-token"><KeyRound size={14} /> Log access token</label>
-          <div className="logs-token-row"><input id="logs-token" type="password" autoComplete="off" value={logsToken} onChange={(event) => setLogsToken(event.target.value)} placeholder="Enter LOGS_ACCESS_TOKEN" /><button type="button" className="secondary-button" onClick={() => loadLogs()} disabled={logsLoading}>{logsLoading ? "Loading…" : "Load logs"}</button></div>
-          <small>Set LOGS_ACCESS_TOKEN in the backend environment. The token stays in this browser session only.</small>
+          <label htmlFor="logs-username"><KeyRound size={14} /> Log sign-in</label>
+          <div className="logs-token-row"><input id="logs-username" autoComplete="username" value={logsUsername} onChange={(event) => { setLogsUsername(event.target.value); setLogsAuthenticated(false); setLogData(null); }} placeholder="Username" /><input id="logs-password" type="password" autoComplete="current-password" value={logsPassword} onChange={(event) => { setLogsPassword(event.target.value); setLogsAuthenticated(false); setLogData(null); }} placeholder="Password" /><button type="button" className="secondary-button" onClick={() => loadLogs()} disabled={logsLoading}>{logsLoading ? "Signing in…" : logsAuthenticated ? "Refresh logs" : "Sign in"}</button></div>
+          <small>Use LOGS_USERNAME and LOGS_PASSWORD configured on the backend. Credentials stay in this browser session only.</small>
         </div>
         <div className="logs-toolbar">
           <div className="log-tabs" role="tablist" aria-label="Log type">

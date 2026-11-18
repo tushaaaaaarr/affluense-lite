@@ -106,6 +106,15 @@ def check_person(p, source_text):
         return None, ["quote not found in source"]
     if not name_in_quote(p.get("name", ""), quote):
         return None, ["name not inside quote"]
+    if p.get("link") == "tendered_in_buyback":
+        normalized_quote = norm(quote)
+        mentions_buyback = any(term in normalized_quote for term in ("buyback", "buy-back", "tender offer"))
+        states_participation = re.search(
+            r"\b(tender(?:ed|ing)?|sold|selling|sell|participat(?:e|ed|ing)|eligible|receiv(?:e|ed|ing)|benefit(?:ed|ing))\b",
+            normalized_quote,
+        )
+        if not (mentions_buyback and states_participation):
+            return None, ["quote does not explicitly connect person to buyback participation"]
 
     # preferred path: model copied the words, code reads the number
     for text_field, num_field in (("shares_text", "shares"), ("amount_text", "amount_inr")):
