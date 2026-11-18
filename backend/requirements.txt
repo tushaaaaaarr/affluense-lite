@@ -6,3 +6,6 @@ pypdf
 python-dateutil
 truststore
 pytest
+fastapi
+uvicorn[standard]
+httpx

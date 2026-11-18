@@ -53,10 +53,14 @@ def run_event(spec, follow_web=False):
             print(f"[fetch]    {url} is a filing page -> {len(found)} document(s)")
         docs += [(u, u) for u in found]
 
+    sources_attempted = len(docs)
+    sources_succeeded = 0
+    sources_failed = 0
     for read_from, url in docs:
         try:
             text = fetcher.get_text(read_from)
         except Exception as e:
+            sources_failed += 1
             notes.append(f"could not fetch {url}: {e}")
             print(f"[fetch]    FAILED {url}: {e}")
             continue
@@ -64,12 +68,15 @@ def run_event(spec, follow_web=False):
         try:
             res = extractor.extract(url, text, name)
         except costlog.BudgetError as e:
+            sources_failed += 1
             notes.append(str(e))
             break
         except Exception as e:             # model/API error: skip this source, keep the rest
+            sources_failed += 1
             notes.append(f"extraction failed for {url}: {e}")
             print(f"[extract]  FAILED {url}: {e}")
             continue
+        sources_succeeded += 1
         print(f"[extract]  kept {len(res['people'])} people, dropped {len(res['dropped'])} facts "
               f"(cost so far ${costlog.spent(name):.4f})")
         ev = res["event"]
@@ -150,6 +157,16 @@ def run_event(spec, follow_web=False):
     wall = round(time.time() - t0, 1)
     print(f"[brief]    {len(persons)} briefs written, total cost ${costlog.spent(name):.4f}")
     costlog.log_run(name, wall, len(persons))
+    if sources_attempted == 0 or (sources_failed and sources_succeeded == 0):
+        analysis_status = "failed"
+    elif sources_failed:
+        analysis_status = "partial"
+    elif not persons and not orgs:
+        analysis_status = "no_leads"
+    else:
+        analysis_status = "complete"
     return {"event": name, "event_info": event_info, "people": persons, "institutions": orgs,
             "notes": notes, "cost": costlog.summary(name), "per_person": costlog.per_person(name),
-            "wall_seconds": wall}
+            "wall_seconds": wall, "analysis_status": analysis_status,
+            "source_counts": {"attempted": sources_attempted, "succeeded": sources_succeeded,
+                              "failed": sources_failed}}

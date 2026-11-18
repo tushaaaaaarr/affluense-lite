@@ -61,3 +61,46 @@ def test_todo_sources_are_skipped(monkeypatch):
     monkeypatch.setattr(fetcher, "get_text", lambda s: (_ for _ in ()).throw(AssertionError("fetched")))
     res = pipeline.run_event({"name": "Empty", "sources": ["TODO: add link"]})
     assert res["people"] == [] and "placeholder" in res["notes"][0]
+    assert res["analysis_status"] == "failed"
+
+
+def run_empty_analysis(monkeypatch, sources, failed_sources=()):
+    monkeypatch.setattr(fetcher, "expand", lambda source: [source])
+    monkeypatch.setattr(
+        fetcher,
+        "get_text",
+        lambda source: (_ for _ in ()).throw(RuntimeError("fetch failed"))
+        if source in failed_sources else DOC,
+    )
+    monkeypatch.setattr(
+        pipeline.extractor,
+        "extract",
+        lambda *args: {"event": {}, "people": [], "dropped": []},
+    )
+    return pipeline.run_event({"name": "Status test", "sources": sources})
+
+
+def test_pipeline_reports_all_source_failures(monkeypatch):
+    result = run_empty_analysis(monkeypatch, ["https://bad.example/source"],
+                                {"https://bad.example/source"})
+
+    assert result["analysis_status"] == "failed"
+    assert result["source_counts"] == {"attempted": 1, "succeeded": 0, "failed": 1}
+
+
+def test_pipeline_reports_partial_source_failures(monkeypatch):
+    result = run_empty_analysis(
+        monkeypatch,
+        ["https://bad.example/source", "https://good.example/source"],
+        {"https://bad.example/source"},
+    )
+
+    assert result["analysis_status"] == "partial"
+    assert result["source_counts"] == {"attempted": 2, "succeeded": 1, "failed": 1}
+
+
+def test_pipeline_distinguishes_successful_no_leads(monkeypatch):
+    result = run_empty_analysis(monkeypatch, ["https://good.example/source"])
+
+    assert result["analysis_status"] == "no_leads"
+    assert result["source_counts"] == {"attempted": 1, "succeeded": 1, "failed": 0}

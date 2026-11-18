@@ -4,11 +4,14 @@ __pycache__/
 .env.*
 !.env.example
 
-cache/
-events/saved/
+/backend/cache/
+/backend/events/saved/
+/backend/.env
 
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
 venv/
+node_modules/
+frontend/dist/

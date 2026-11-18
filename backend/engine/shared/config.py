@@ -8,7 +8,7 @@ try:                    # use the OS certificate store (needed behind corporate 
 except ImportError:
     pass
 
-ROOT = Path(__file__).resolve().parents[2]      # project folder (this file is engine/shared/)
+ROOT = Path(__file__).resolve().parents[2]      # backend folder (this file is engine/shared/)
 CACHE_DIR = ROOT / "cache"
 OUT_DIR = ROOT / "outputs"
 CACHE_DIR.mkdir(exist_ok=True)

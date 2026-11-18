@@ -1,6 +1,6 @@
 # What's broken
 
-**Where it gives wrong answers (real examples from my runs, all in `outputs/`)**
+**Where it gives wrong answers (real examples from my runs, all in `backend/outputs/`)**
 - **A number 1,000× too small.** SEDEMAC RHP page 111: *"…30, 000 Equity Shares … were allotted to Arvind Munde"*. The PDF text has a space inside "30,000", my number reader stopped at "30", and the report said **30 shares, ₹0.0 cr**. The AI copied the quote correctly; my code misread it. Fixed (split numbers are rejoined) with a test, but other PDF layouts can break numbers in ways I haven't seen yet.
 - **An incubator ranked #1 as a person to call.** First SEDEMAC run: "Society for Innovation and Entrepreneurship" topped the call list, with "…Sanghavi HUF" (a family entity) at #5. `is_org` is a word list and didn't know "Society" or "HUF". Fixed by adding Indian legal forms, but it's still a word list: "Inspira Global" (RBA) would still look like a person.
 - **Two brothers flagged as maybe the same man.** "Atul Hiralal Shah" / "Bakul Hiralal Shah" (same father's name) lost confidence (0.5→0.3) for each other. Fixed: different full first names now mean different people.
@@ -15,4 +15,4 @@
 
 **AI tools:** most useful for scaffolding, tests and reading 500-page filings fast. They misled me by sounding certain: a made-up model price list, the crore-to-integer design, and a model name (`gemini-2.5-flash`) that had been retired.
 
-**With 2 more weeks (in order):** 1) table-aware PDF parsing (would fix Capri and the split numbers); 2) DIN/company as a second key for names and orgs; 3) 20 hand-checked events to measure accuracy; 4) basis-of-allotment and settlement dates for real amounts and timing; 5) CRM overlap check; 6) a simple web page for RMs.
+**With 2 more weeks (in order):** 1) table-aware PDF parsing (would fix Capri and the split numbers); 2) DIN/company as a second key for names and orgs; 3) 20 hand-checked events to measure accuracy; 4) basis-of-allotment and settlement dates for real amounts and timing; 5) CRM overlap check; 6) turn the demo UI into an authenticated RM workflow with lead assignment and evidence review.

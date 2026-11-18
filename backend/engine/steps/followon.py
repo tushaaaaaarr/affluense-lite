@@ -13,27 +13,32 @@ Follow-on results never trigger further follow-ons (that's the depth limit).
 """
 import json
 import sqlite3
+import threading
 import time
 
 from engine.shared import config, costlog
 from engine.steps import resolver
 
-_db = sqlite3.connect(config.CACHE_DIR / "ledger.sqlite")
+_db = sqlite3.connect(config.CACHE_DIR / "ledger.sqlite", check_same_thread=False)
+_db_lock = threading.RLock()
 _db.execute("create table if not exists ledger (name text, event text, link text, amount_high real)")
 _db.execute("create table if not exists web_cache (key text primary key, urls text)")
 
 
 def remember(event_name, people):
-    _db.execute("delete from ledger where event=?", (event_name,))      # re-runs shouldn't duplicate
-    for p in people:
-        _db.execute("insert into ledger values (?,?,?,?)",
-                    (p["name"], event_name, p.get("link"), p["amount"]["high"]))
-    _db.commit()
+    with _db_lock:
+        _db.execute("delete from ledger where event=?", (event_name,))      # re-runs shouldn't duplicate
+        for p in people:
+            _db.execute("insert into ledger values (?,?,?,?)",
+                        (p["name"], event_name, p.get("link"), p["amount"]["high"]))
+        _db.commit()
 
 
 def ledger_hits(person, current_event):
     hits = []
-    for name, event, link, amt in _db.execute("select name, event, link, amount_high from ledger"):
+    with _db_lock:
+        rows = _db.execute("select name, event, link, amount_high from ledger").fetchall()
+    for name, event, link, amt in rows:
         if event == current_event:
             continue
         verdict = resolver.compare(person["name"], name)
@@ -49,7 +54,8 @@ def web_leads(person, event_name, depth):
     if depth >= config.FOLLOW_MAX_DEPTH:
         return []
     key = f"{person['name']}|{event_name}"
-    row = _db.execute("select urls from web_cache where key=?", (key,)).fetchone()
+    with _db_lock:
+        row = _db.execute("select urls from web_cache where key=?", (key,)).fetchone()
     if row:
         costlog.log(event_name, "followon_search", config.MODEL, 0, 0, 0.0, 0.0, True, person["name"])
         return json.loads(row[0])
@@ -83,6 +89,7 @@ def web_leads(person, event_name, depth):
             + n_searches * config.WEB_SEARCH_COST_USD)
     costlog.log(event_name, "followon_search", config.MODEL, resp.usage.input_tokens,
                 resp.usage.output_tokens, cost, time.time() - t0, False, person["name"])
-    _db.execute("insert or replace into web_cache values (?,?)", (key, json.dumps(urls)))
-    _db.commit()
+    with _db_lock:
+        _db.execute("insert or replace into web_cache values (?,?)", (key, json.dumps(urls)))
+        _db.commit()
     return urls

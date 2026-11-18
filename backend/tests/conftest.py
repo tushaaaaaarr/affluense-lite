@@ -18,7 +18,7 @@ def isolated_logs(monkeypatch, tmp_path):
     monkeypatch.setattr(config, "MODEL", "claude-haiku-5-5")
     monkeypatch.setattr(costlog, "CSV_PATH", tmp_path / "cost_log.csv")
     monkeypatch.setattr(costlog, "RUNS_PATH", tmp_path / "runs.csv")
-    db = sqlite3.connect(":memory:")
+    db = sqlite3.connect(":memory:", check_same_thread=False)
     db.execute("create table ledger (name text, event text, link text, amount_high real)")
     db.execute("create table web_cache (key text primary key, urls text)")
     monkeypatch.setattr(followon, "_db", db)

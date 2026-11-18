@@ -38,3 +38,15 @@ ae5224c6,2026-11-15T16:13:19,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3
 5797b28c,2026-11-15T16:13:22,"Astrotalk ESOP buyback (Aug 2026, $1bn valuation)",extract,,gemini-3.5-flash-lite,2102,83,0.0,0.0,True
 5797b28c,2026-11-15T16:13:22,"Astrotalk ESOP buyback (Aug 2026, $1bn valuation)",extract,,gemini-3.5-flash-lite,828,79,0.0,0.0,True
 d4767c9b,2026-11-15T16:13:23,Jio Platforms IPO (Oct 2026),extract,,gemini-3.5-flash-lite,12908,79,0.0,0.0,True
+899c83b0,2026-11-18T13:22:56,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,2617,126,0.0011,2.75,False
+899c83b0,2026-11-18T13:23:06,SEDEMAC Mechatronics IPO (Mar 2026),extract,,gemini-3.5-flash-lite,12916,3974,0.01381,9.17,False
+899c83b0,2026-11-18T13:23:10,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3.5-flash-lite,2601,793,0.002763,3.54,False
+899c83b0,2026-11-18T13:23:13,SEDEMAC Mechatronics IPO (Mar 2026),brief,,gemini-3.5-flash-lite,1447,715,0.002222,3.44,False
+76c839d4,2026-11-18T14:01:39,SEDEMAC IPO,extract,,gemini-3.5-flash-lite,2606,112,0.001062,2.53,False
+76c839d4,2026-11-18T14:01:56,SEDEMAC IPO,extract,,gemini-3.5-flash-lite,12905,3810,0.013397,16.78,False
+76c839d4,2026-11-18T14:02:06,SEDEMAC IPO,brief,,gemini-3.5-flash-lite,2491,844,0.002857,10.5,False
+76c839d4,2026-11-18T14:02:09,SEDEMAC IPO,brief,,gemini-3.5-flash-lite,1359,627,0.001975,2.16,False
+9da0d8bf,2026-11-18T14:16:14,SEDEMAC IPO 18-11,extract,,gemini-3.5-flash-lite,2612,132,0.001114,8.13,False
+9da0d8bf,2026-11-18T14:16:27,SEDEMAC IPO 18-11,extract,,gemini-3.5-flash-lite,12911,4083,0.014081,13.61,False
+9da0d8bf,2026-11-18T14:16:30,SEDEMAC IPO 18-11,brief,,gemini-3.5-flash-lite,2401,895,0.002958,2.45,False
+9da0d8bf,2026-11-18T14:16:32,SEDEMAC IPO 18-11,brief,,gemini-3.5-flash-lite,1407,627,0.00199,1.77,False

@@ -5,11 +5,13 @@
 """
 import hashlib
 import sqlite3
+import threading
 import time
 
 from engine.shared import config, costlog
 
-_db = sqlite3.connect(config.CACHE_DIR / "llm_cache.sqlite")
+_db = sqlite3.connect(config.CACHE_DIR / "llm_cache.sqlite", check_same_thread=False)
+_db_lock = threading.RLock()
 _db.execute("create table if not exists calls (key text primary key, text text, in_tok int, out_tok int)")
 _client = None
 _warned = set()
@@ -68,7 +70,8 @@ def ask(system, prompt, stage, event, person="", max_tokens=2500, model=None):
     model = model or config.MODEL
     key = hashlib.sha256(f"{model}|{system}|{prompt}".encode()).hexdigest()
 
-    row = _db.execute("select text, in_tok, out_tok from calls where key=?", (key,)).fetchone()
+    with _db_lock:
+        row = _db.execute("select text, in_tok, out_tok from calls where key=?", (key,)).fetchone()
     if row:
         costlog.log(event, stage, model, row[1], row[2], 0.0, 0.0, True, person)
         return row[0]
@@ -80,7 +83,8 @@ def ask(system, prompt, stage, event, person="", max_tokens=2500, model=None):
     secs = time.time() - t0
 
     if text.strip():                 # never cache an empty or cut-off answer
-        _db.execute("insert or replace into calls values (?,?,?,?)", (key, text, in_tok, out_tok))
-        _db.commit()
+        with _db_lock:
+            _db.execute("insert or replace into calls values (?,?,?,?)", (key, text, in_tok, out_tok))
+            _db.commit()
     costlog.log(event, stage, model, in_tok, out_tok, _cost(model, in_tok, out_tok), secs, False, person)
     return text
